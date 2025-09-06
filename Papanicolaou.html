@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo de Tinción de Papanicolaou</title>
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --accent-color: #4cb5ae;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --success-color: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background-color: var(--secondary-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        section {
+            padding: 3rem 0;
+            background-color: white;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        .card {
+            background-color: var(--light-color);
+            border-radius: 5px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-card {
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .step-number {
+            background-color: var(--accent-color);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .reagent-list {
+            list-style-type: none;
+        }
+        
+        .reagent-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .reagent-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .procedure-steps {
+            list-style-type: none;
+            counter-reset: step-counter;
+        }
+        
+        .procedure-steps li {
+            margin-bottom: 1.5rem;
+            padding-left: 3rem;
+            position: relative;
+        }
+        
+        .procedure-steps li:before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: var(--primary-color);
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .important-note {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .procedure-steps li {
+                padding-left: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Protocolo de Tinción de Papanicolaou</h1>
+            <p class="subtitle">Modificado para menor uso de alcohol y ácido</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="#introduccion" class="nav-link">Introducción</a>
+            <a href="#principio" class="nav-link">Principio</a>
+            <a href="#modificaciones" class="nav-link">Modificaciones</a>
+            <a href="#reactivos" class="nav-link">Reactivos</a>
+            <a href="#procedimiento" class="nav-link">Procedimiento</a>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <section id="introduccion">
+            <h2 class="section-title">Introducción</h2>
+            <div class="card">
+                <p>El Pap es una tinción policromática que permite un detallado estudio de la cromatina y la diferenciación citoplasmática (queratinización, metaplasia, etc.).</p>
+            </div>
+        </section>
+        
+        <section id="principio">
+            <h2 class="section-title">Principio</h2>
+            <div class="card">
+                <p>Utiliza múltiples colorantes (hematoxilina, Orange G, EA-50 o EA-65) que se diferencian con alcohol acidificado para obtener una gama de colores.</p>
+            </div>
+        </section>
+        
+        <section id="modificaciones">
+            <h2 class="section-title">Modificaciones para eficiencia</h2>
+            <div class="card">
+                <h3>Volúmenes reducidos</h3>
+                <p>Usar cubetas pequeñas o frascos de boca estrecha para minimizar la evaporación y el volumen de reactivo necesario.</p>
+            </div>
+            
+            <div class="card">
+                <h3>Alcohol acidificado reutilizable</h3>
+                <p>El alcohol acidificado para la diferenciación puede usarse para varias series de tinciones si se controla su fuerza.</p>
+            </div>
+            
+            <div class="card">
+                <h3>Baños de alcohol de menor concentración</h3>
+                <p>Se puede utilizar etanol al 95% para la deshidratación inicial y final en lugar de al 100%, reduciendo costos.</p>
+            </div>
+        </section>
+        
+        <section id="reactivos">
+            <h2 class="section-title">Reactivos Necesarios</h2>
+            <div class="card">
+                <ul class="reagent-list">
+                    <li><strong>Fijador:</strong> Alcohol etílico al 95% (Spray citofijador o en baño)</li>
+                    <li><strong>Hematoxilina</strong> de Papanicolaou (ej. Harris o Gill)</li>
+                    <li><strong>Alcohol acidificado</strong> (0.5% HCl en alcohol al 70% o 95%)</li>
+                    <li><strong>Solución de Orange G</strong></li>
+                    <li><strong>Solución de EA-50 o EA-65</strong> (Eosina Azure)</li>
+                    <li><strong>Alcohol al 95%</strong> (para deshidratación)</li>
+                    <li><strong>Alcohol absoluto</strong> (opcional, se puede sustituir por 95% en la mayoría de pasos)</li>
+                    <li><strong>Xilol o sustituto de xilol</strong></li>
+                    <li><strong>Medio de montaje</strong></li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="procedimiento">
+            <h2 class="section-title">Procedimiento Paso a Paso</h2>
+            
+            <ol class="procedure-steps">
+                <li>
+                    <h3>Fijación</h3>
+                    <p>Las muestras (LBC o convencionales) deben estar fijadas inmediatamente en alcohol etílico al 95% durante un mínimo de 15 minutos. La fijación adecuada es crítica.</p>
+                </li>
+                
+                <li>
+                    <h3>Hidratación</h3>
+                    <p>Sumergir en Alcohol al 70% y luego en Agua destilada (1 min cada uno). Esto prepara las células para la tinción acuosa.</p>
+                </li>
+                
+                <li>
+                    <h3>Tinción Nuclear</h3>
+                    <p>Hematoxilina durante 3-5 minutos.</p>
+                </li>
+                
+                <li>
+                    <h3>Enjuague</h3>
+                    <p>Enjuagar en agua corriente.</p>
+                </li>
+                
+                <li>
+                    <h3>Diferenciación (Paso Ácido Clave)</h3>
+                    <p>Sumergir en Alcohol acidificado (0.5% HCl) por 2-5 inmersiones rápidas. Este es el paso más crítico. El exceso de tiempo aquí destruirá la tinción nuclear.</p>
+                    <div class="important-note">
+                        <strong>Nota importante:</strong> Este paso requiere atención cuidadosa ya que un tiempo excesivo arruinará la tinción.
+                    </div>
+                </li>
+                
+                <li>
+                    <h3>Enjuague exhaustivo</h3>
+                    <p>Enjuagar exhaustivamente en agua corriente (5-10 minutos).</p>
+                </li>
+                
+                <li>
+                    <h3>"Azuleo"</h3>
+                    <p>Sumergir en agua corriente o agua con un poco de bicarbonato/litro (1-2 minutos).</p>
+                </li>
+                
+                <li>
+                    <h3>Deshidratación</h3>
+                    <p>Sumergir en Alcohol al 70% y luego en Alcohol al 95% (1 min cada uno).</p>
+                </li>
+                
+                <li>
+                    <h3>Tinción Citoplasmática</h3>
+                    <p>Orange G durante 1-2 minutos.</p>
+                </li>
+                
+                <li>
+                    <h3>Enjuague</h3>
+                    <p>Enjuagar en 2 baños de Alcohol al 95% (brevemente, para eliminar el exceso).</p>
+                </li>
+                
+                <li>
+                    <h3>Tinción con EA</h3>
+                    <p>EA-50 o EA-65 durante 2-5 minutos (ajustar según la reactividad del lote).</p>
+                </li>
+                
+                <li>
+                    <h3>Enjuague final</h3>
+                    <p>Enjuagar en 2 baños de Alcohol al 95% (brevemente).</p>
+                </li>
+                
+                <li>
+                    <h3>Deshidratación Final y Aclarado</h3>
+                    <p>Sumergir en Alcohol al 95% (2 baños de 1 minuto cada uno). Este paso puede hacerse con alcohol al 95% en lugar de absoluto.</p>
+                </li>
+                
+                <li>
+                    <h3>Paso opcional de alcohol absoluto</h3>
+                    <p>Si se requiere mayor claridad, usar un baño de Alcohol absoluto (1 min).</p>
+                </li>
+                
+                <li>
+                    <h3>Aclarado con Xilol</h3>
+                    <p>Sumergir en Xilol o sustituto (2-3 baños de 2 minutos cada uno).</p>
+                </li>
+                
+                <li>
+                    <h3>Montaje</h3>
+                    <p>Montar con medio de montaje de resina sintética.</p>
+                </li>
+            </ol>
+            
+            <div class="card">
+                <h3>Consejo de Eficiencia</h3>
+                <p>El alcohol acidificado (Paso 4) es donde se gasta más ácido. Prepare volúmenes pequeños y cámbielo cuando note que diferencia demasiado lento (núcleos pálidos) o demasiado rápido (pérdida de núcleos en todas las muestras). El control visual es esencial.</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>Protocolo de Tinción de Papanicolaou - Modificado para menor uso de alcohol y ácido</p>
+        </div>
+    </footer>
+</body>
+</html>
