@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de Coloración Rápida H&E para Cortes por Congelación</title>
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --accent-color: #4cb5ae;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3, h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        h1 { font-size: 2.2rem; }
+        h2 { font-size: 1.8rem; border-bottom: 2px solid var(--secondary-color); padding-bottom: 0.5rem; margin-top: 2rem; }
+        h3 { font-size: 1.4rem; color: var(--secondary-color); }
+        h4 { font-size: 1.2rem; color: var(--primary-color); margin-top: 1.5rem; }
+        ul, ol {
+            padding-left: 20px;
+            margin-bottom: 1rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        strong {
+            color: var(--dark-color);
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 2rem 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: .95rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        th, td {
+            padding: .75rem;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background: var(--secondary-color);
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background: #f2f6fa;
+        }
+        .timer {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            background: var(--accent-color);
+            color: #fff;
+            padding: .25rem .55rem;
+            border-radius: 4px;
+            font-size: .85rem;
+            font-weight: bold;
+        }
+        .main-nav {
+            background-color: var(--dark-color);
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .main-nav .container-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+        .main-nav ul li {
+            margin: 0 15px;
+        }
+        .main-nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .main-nav ul li a:hover, .main-nav ul li a.active {
+            background-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="container-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Improntas.html">Tinción para Improntas</a></li>
+                <li><a href="Papanicolaou.html">Papanicolaou Modificado</a></li>
+                <li><a href="papanicolauclasico.html">Papanicolaou Clásico</a></li>
+                <li><a href="he-congelacion.html" class="active">H&E para Congelación</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Método de Coloración Rápida: Hematoxilina y Eosina (H&E) para Cortes por Congelación</h1>
+        <p>El principio es el mismo que para tejidos incluidos en parafina, pero los tiempos se acortan drásticamente, sacrificando un poco la finura del detalle a cambio de la velocidad.</p>
+
+        <h2>Materiales y Reactivos Necesarios</h2>
+        <ul>
+            <li><strong>Criostato:</strong> Para obtener el corte.</li>
+            <li><strong>Portaobjetos:</strong> Preferiblemente cargados positivamente (adherentes) para evitar que el tejido se desprenda.</li>
+            <li><strong>Fijador de elección:</strong> Alcohol Isopropílico al 95% o 100%. Es rápido y evita la formación de cristales de hielo (artefacto) mejor que el formol en este contexto.</li>
+            <li><strong>Hematoxilina:</strong> Una de progresión rápida (ej: Harris, Gill). Debe estar filtrada diariamente.</li>
+            <li><strong>Eosina:</strong> Solución acuosa o alcohólica.</li>
+            <li><strong>Baños de Alcohol:</strong> Para la deshidratación (Alcohol 95% y 100%).</li>
+            <li><strong>Baños de Xileno:</strong> Para el aclarado.</li>
+            <li><strong>Medio de Montaje:</strong> Resina sintética (ej: Entellan, DPX).</li>
+            <li><strong>Cronómetro o Temporizador.</strong></li>
+        </ul>
+
+        <h2>Procedimiento Paso a Paso (Protocolo Rápido ~60 segundos)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Paso</th>
+                    <th>Procedimiento</th>
+                    <th>Tiempo</th>
+                    <th>Propósito y Observaciones Clave</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1. Fijación</td><td>Sumergir el portaobjetos con el corte en <strong>Alcohol Isopropílico 95-100%</strong>.</td><td><span class="timer">~10 s</span></td><td>Fija las proteínas y evita artefactos. <strong>Paso crítico para la calidad.</strong></td></tr>
+                <tr><td>2. Lavado</td><td>Enjuagar con <strong>agua corriente</strong>.</td><td><span class="timer">~5 s</span></td><td>Hidrata el tejido para la tinción nuclear.</td></tr>
+                <tr><td>3. Tinción Nuclear</td><td>Sumergir en <strong>Hematoxilina</strong>.</td><td><span class="timer">~15 s</span></td><td>Tiñe los núcleos de azul-violáceo. Ajustar según la fuerza del colorante.</td></tr>
+                <tr><td>4. Lavado</td><td>Enjuagar con <strong>agua corriente</strong>.</td><td><span class="timer">~5 s</span></td><td>Elimina el exceso de hematoxilina.</td></tr>
+                <tr><td>5. "Azuleo"</td><td>Sumergir en <strong>agua amoniacal</strong> o <strong>agua de litio</strong>.</td><td><span class="timer">~5 s</span></td><td>Vira el color del núcleo a un azul brillante. <strong>No omitir.</strong></td></tr>
+                <tr><td>6. Lavado</td><td>Enjuagar con <strong>agua corriente</strong>.</td><td><span class="timer">~5 s</span></td><td>Elimina el exceso de solución alcalina.</td></tr>
+                <tr><td>7. Tinción Citoplasmática</td><td>Sumergir en <strong>Eosina</strong>.</td><td><span class="timer">~5 s</span></td><td>Tiñe citoplasma y estroma de tonos rosados.</td></tr>
+                <tr><td>8. Deshidratación</td><td>Sumergir en <strong>Alcohol 95%</strong>, luego en <strong>Alcohol 100%</strong>.</td><td><span class="timer">~5 s c/u</span></td><td>Elimina el agua del tejido para permitir el aclarado.</td></tr>
+                <tr><td>9. Aclarado</td><td>Sumergir en <strong>Xileno</strong> (2 baños).</td><td><span class="timer">~5 s c/u</span></td><td>Reemplaza el alcohol y hace el tejido transparente.</td></tr>
+                <tr><td>10. Montaje</td><td>Colocar <strong>medio de montaje</strong> y cubreobjetos.</td><td>-</td><td>Sella la muestra para observación. Evitar burbujas.</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Consideraciones Profesionales</h2>
+        <ul>
+            <li><strong>Velocidad vs. Calidad:</strong> Se prioriza la velocidad para el cirujano. Es normal que la calidad no sea tan perfecta como en un bloque de parafina.</li>
+            <li><strong>Calidad del Congelado:</strong> Un buen corte es la base. Si el tejido está mal congelado (cristales de hielo), la tinción será pobre.</li>
+            <li><strong>Espesor del Corte:</strong> Los cortes son más gruesos (5-10 µm), lo que puede dar una apariencia menos nítida.</li>
+            <li><strong>Control de Reactivos:</strong> Verificar siempre los reactivos. Una hematoxilina vieja dará un resultado pálido.</li>
+        </ul>
+
+        <h2>Método Alternativo Ultra-Rápido (Tinción Monocromática)</h2>
+        <p>Para una evaluación muy rápida (ej. confirmar presencia de tejido), se puede usar:</p>
+        <ul>
+            <li><strong>Azul de Toluidina:</strong> Una inmersión y lavado rápido tiñe núcleos y cartílago.</li>
+            <li><strong>Rojo Sudan o Oil Red O:</strong> Específicos para teñir lípidos (grasa) en rojo/anaranjado.</li>
+        </ul>
+        <hr>
+        <p><strong>En resumen:</strong> El método estándar de oro para la coloración de cortes por congelación es la <strong>H&E Rápida</strong>, utilizando alcohol como fijador y optimizando todos los tiempos para obtener un diagnóstico fiable en menos de un minuto después de obtener el corte.</p>
+    </main>
+</body>
+</html>
