@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protocolo de Tinción para Improntas Citológicas</title>
+    <title>Protocolo de Tinción para Improntas Citológicas (H&E Rápido)</title>
     <style>
         :root {
             --primary-color: #4a6fa5;
             --secondary-color: #166088;
+            --accent-color: #4cb5ae;
             --light-color: #f8f9fa;
             --dark-color: #343a40;
         }
@@ -32,7 +33,7 @@
         }
         h1 { font-size: 2.2rem; }
         h2 { font-size: 1.8rem; border-bottom: 2px solid var(--secondary-color); padding-bottom: 0.5rem; }
-        h3 { font-size: 1.4rem; color: var(--secondary-color); }
+        h3 { font-size: 1.4rem; color: var(--secondary-color); margin-top: 1.5rem; }
         ul, ol {
             padding-left: 20px;
             margin-bottom: 1rem;
@@ -74,6 +75,52 @@
         .main-nav ul li a:hover, .main-nav ul li a.active {
             background-color: var(--primary-color);
         }
+
+        /* Estilos para el desplegable */
+        details {
+            border: 1px solid #e1e8ed;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            background-color: #f9fbfd;
+            transition: box-shadow 0.2s;
+        }
+        details:hover {
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+        summary {
+            font-weight: bold;
+            padding: 1rem;
+            cursor: pointer;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            list-style: none; /* Remove default marker */
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::before {
+            content: '▶ ';
+            margin-right: 0.5rem;
+            transition: transform 0.2s;
+        }
+        details[open] > summary::before {
+            transform: rotate(90deg);
+        }
+        .details-content {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            border-top: 1px solid #e1e8ed;
+        }
+
+        /* Estilos para la tabla */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: .95rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        th, td { padding: .75rem; border: 1px solid #ccc; text-align: left; }
+        th { background: var(--secondary-color); color: #fff; }
+        tr:nth-child(even) { background: #f2f6fa; }
+        td ul { margin: 0; padding-left: 18px; }
     </style>
 </head>
 <body>
@@ -84,6 +131,9 @@
                 <li><a href="Improntas.html" class="active">Tinción para Improntas</a></li>
                 <li><a href="Papanicolaou.html">Papanicolaou Modificado</a></li>
                 <li><a href="papanicolauclasico.html">Papanicolaou Clásico</a></li>
+                <li><a href="he-congelacion.html">H&E para Congelación</a></li>
+                <li><a href="improntas-sin-xilol.html">Improntas sin Xilol</a></li>
+                <li><a href="papanicolau-sin-xilol.html">Papanicolaou sin Xilol</a></li>
             </ul>
         </div>
     </nav>
@@ -93,43 +143,86 @@
         <h2>(MÉTODO RÁPIDO DE HEMATOXILINA-EOSINA)</h2>
         <p>Este protocolo es rápido, eficaz y ideal para una evaluación intraoperatoria.</p>
 
-        <h3>Principio:</h3>
-        <p>La tinción de Hematoxilina-Eosina (H&E) es el estándar de oro. La hematoxilina tiñe los núcleos de azul/púrpura, mientras que la eosina tiñe el citoplasma y las estructuras extracelulares de rosa.</p>
+        <details>
+            <summary>Principio</summary>
+            <div class="details-content">
+                <p>La tinción de Hematoxilina-Eosina (H&E) es el estándar de oro. La hematoxilina tiñe los núcleos de azul/púrpura, mientras que la eosina tiñe el citoplasma y las estructuras extracelulares de rosa.</p>
+            </div>
+        </details>
 
-        <h3>Ventajas de este protocolo:</h3>
-        <ul>
-            <li><strong>Bajo consumo de alcohol:</strong> Utiliza solo dos baños de alcohol de 95° (uno para fijar y otro para deshidratar).</li>
-            <li><strong>Rápido:</strong> Menos de 2 minutos.</li>
-            <li><strong>Eficiente:</strong> Proporciona un contraste nuclear-citoplasmático excelente.</li>
-        </ul>
+        <details>
+            <summary>Ventajas de este protocolo</summary>
+            <div class="details-content">
+                <ul>
+                    <li><strong>Bajo consumo de alcohol:</strong> Utiliza solo dos baños de alcohol de 95° (uno para fijar y otro para deshidratar).</li>
+                    <li><strong>Rápido:</strong> Menos de 2 minutos.</li>
+                    <li><strong>Eficiente:</strong> Proporciona un contraste nuclear-citoplasmático excelente.</li>
+                </ul>
+            </div>
+        </details>
 
-        <h3>Reactivos Necesarios:</h3>
-        <ul>
-            <li>Fijador: Alcohol isopropílico o etanol al 95%.</li>
-            <li>Hematoxilina Harris (o similar).</li>
-            <li>Agua acidificada (1-2 gotas de HCl concentrado en 500 ml de agua destilada).</li>
-            <li>Eosina acuosa o alcohólica.</li>
-            <li>Alcohol al 95% (para deshidratar).</li>
-            <li>Xilol o sustituto de xilol (para aclarar).</li>
-            <li>Medio de montaje sintético.</li>
-        </ul>
+        <details>
+            <summary>Reactivos Necesarios</summary>
+            <div class="details-content">
+                <ul>
+                    <li>Fijador: Alcohol isopropílico o etanol al 95%.</li>
+                    <li>Hematoxilina Harris (o similar).</li>
+                    <li>Agua acidificada (1-2 gotas de HCl concentrado en 500 ml de agua destilada).</li>
+                    <li>Eosina acuosa o alcohólica.</li>
+                    <li>Alcohol al 95% (para deshidratar).</li>
+                    <li>Xilol o sustituto de xilol (para aclarar).</li>
+                    <li>Medio de montaje sintético.</li>
+                </ul>
+            </div>
+        </details>
 
-        <h3>PROCEDIMIENTO PASO A PASO:</h3>
-        <ol>
-            <li><strong>Fijación Inmediata:</strong> Sumergir la impronta inmediatamente después de tomarla en Alcohol al 95% durante 30 segundos. Esto previene el secado al aire y la distorsión celular.</li>
-            <li>Escurrir el exceso de alcohol.</li>
-            <li><strong>Tinción Nuclear (Hematoxilina):</strong> Sumergir el portaobjetos en Hematoxilina Harris durante 20-30 segundos.</li>
-            <li>Enjuagar con agua corriente hasta que el agua salga clara (20-30 segundos).</li>
-            <li><strong>Diferenciación:</strong> Sumergir brevemente (<em>1-3 inmersiones rápidas</em>) en Agua acidificada. Este paso elimina el exceso de hematoxilina de los citoplasmas. ¡No exceder el tiempo!</li>
-            <li>Enjuagar inmediatamente en agua corriente (10 segundos).</li>
-            <li><strong>"Azuleo":</strong> Sumergir en agua con un pH ligeramente alcalino (agua del grifo es suficiente) durante 10 segundos para volver los núcleos de un azul brillante.</li>
-            <li><strong>Tinción Citoplasmática (Eosina):</strong> Sumergir en Eosina durante 10-20 segundos.</li>
-            <li>Escurrir el exceso.</li>
-            <li><strong>Deshidratación y Aclarado:</strong> Sumergir en Alcohol al 95% (2 baños rápidos de 5-10 segundos cada uno) para deshidratar.</li>
-            <li>Sumergir en Xilol o sustituto de xilol (2 baños de 30 segundos cada uno) para aclarar.</li>
-            <li><strong>Montaje:</strong> Montar con medio de montaje sintético y cubrir con un cubreobjetos.</li>
-        </ol>
+        <details open>
+            <summary>PROCEDIMIENTO PASO A PASO</summary>
+            <div class="details-content">
+                <ol>
+                    <li><strong>Fijación Inmediata:</strong> Sumergir la impronta inmediatamente después de tomarla en Alcohol al 95% durante 30 segundos. Esto previene el secado al aire y la distorsión celular.</li>
+                    <li>Escurrir el exceso de alcohol.</li>
+                    <li><strong>Tinción Nuclear (Hematoxilina):</strong> Sumergir el portaobjetos en Hematoxilina Harris durante 20-30 segundos.</li>
+                    <li>Enjuagar con agua corriente hasta que el agua salga clara (20-30 segundos).</li>
+                    <li><strong>Diferenciación:</strong> Sumergir brevemente (<em>1-3 inmersiones rápidas</em>) en Agua acidificada. Este paso elimina el exceso de hematoxilina de los citoplasmas. ¡No exceder el tiempo!</li>
+                    <li>Enjuagar inmediatamente en agua corriente (10 segundos).</li>
+                    <li><strong>"Azuleo":</strong> Sumergir en agua con un pH ligeramente alcalino (agua del grifo es suficiente) durante 10 segundos para volver los núcleos de un azul brillante.</li>
+                    <li><strong>Tinción Citoplasmática (Eosina):</strong> Sumergir en Eosina durante 10-20 segundos.</li>
+                    <li>Escurrir el exceso.</li>
+                    <li><strong>Deshidratación y Aclarado:</strong> Sumergir en Alcohol al 95% (2 baños rápidos de 5-10 segundos cada uno) para deshidratar.</li>
+                    <li>Sumergir en Xilol o sustituto de xilol (2 baños de 30 segundos cada uno) para aclarar.</li>
+                    <li><strong>Montaje:</strong> Montar con medio de montaje sintético y cubrir con un cubreobjetos.</li>
+                </ol>
+            </div>
+        </details>
+
         <p><strong>Nota:</strong> Para una evaluación ultra-rápida (menos de 60 segundos), muchos tecnólogos utilizan tinciones tipo Diff-Quik (Romanowsky modificado), que son aún más rápidas y usan muy poco alcohol, pero el contraste H&E es más familiar para los patólogos en el contexto intraoperatorio.</p>
+
+        <h3>Protocolo de Tinción H&E (Hematoxilina y Eosina) - Cuadro Resumen</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Paso</th>
+                    <th>Procedimiento</th>
+                    <th>Tiempo / Indicaciones</th>
+                    <th>Notas / Propósito</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td><strong>Fijación Inmediata</strong><br>Sumergir la impronta en Alcohol al 95%.</td><td>30 segundos</td><td>Previene el secado al aire y la distorsión celular.</td></tr>
+                <tr><td>2</td><td><strong>Escurrir</strong><br>Escurrir el exceso de alcohol.</td><td>-</td><td>Eliminar el exceso de alcohol.</td></tr>
+                <tr><td>3</td><td><strong>Tinción Nuclear (Hematoxilina)</strong><br>Sumergir el portaobjetos en Hematoxilina Harris.</td><td>20-30 segundos</td><td>Tiñe los núcleos de color púrpura/azul.</td></tr>
+                <tr><td>4</td><td><strong>Enjuague</strong><br>Enjuagar con agua corriente.</td><td>20-30 segundos (hasta que el agua salga clara).</td><td>Remueve el exceso de tinción.</td></tr>
+                <tr><td>5</td><td><strong>Diferenciación</strong><br>Sumergir en Agua acidificada.</td><td>1-3 inmersiones rápidas.</td><td>Elimina el exceso de hematoxilina de los citoplasmas. ¡No exceder el tiempo!</td></tr>
+                <tr><td>6</td><td><strong>Enjuague</strong><br>Enjuagar inmediatamente en agua corriente.</td><td>10 segundos</td><td>Detiene la diferenciación.</td></tr>
+                <tr><td>7</td><td><strong>"Azuleo"</strong><br>Sumergir en agua con pH ligeramente alcalino (agua del grifo).</td><td>10 segundos</td><td>Vuelve los núcleos de un azul brillante.</td></tr>
+                <tr><td>8</td><td><strong>Tinción Citoplasmática (Eosina)</strong><br>Sumergir en Eosina.</td><td>10-20 segundos</td><td>Tiñe el citoplasma y estructuras extracelulares de color rosa.</td></tr>
+                <tr><td>9</td><td><strong>Escurrir</strong><br>Escurrir el exceso.</td><td>-</td><td>Eliminar el exceso de eosina.</td></tr>
+                <tr><td>10</td><td><strong>Deshidratación</strong><br>Sumergir en Alcohol al 95%.</td><td>2 baños rápidos de 5-10 segundos cada uno.</td><td>Elimina el agua de la muestra.</td></tr>
+                <tr><td>11</td><td><strong>Aclarado</strong><br>Sumergir en Xilol o sustituto de xilol.</td><td>2 baños de 30 segundos cada uno.</td><td>Hace el tejido transparente para la microscopía.</td></tr>
+                <tr><td>12</td><td><strong>Montaje</strong><br>Montar con medio de montaje sintético y cubrir con un cubreobjetos.</td><td>-</td><td>Sella la preparación para su observación y preservación.</td></tr>
+            </tbody>
+        </table>
     </main>
 </body>
 </html>

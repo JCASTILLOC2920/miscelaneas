@@ -2,87 +2,26 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Guía técnica – Coloración Papanicolaou Clásico</title>
-    <style>
-        :root {
-            --primary-color: #4a6fa5;
-            --secondary-color: #166088;
-            --light-color: #f8f9fa;
-            --dark-color: #343a40;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        h1, h2 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        h1 { font-size: 2.2rem; }
-        h2 { font-size: 1.8rem; border-bottom: 2px solid var(--secondary-color); padding-bottom: 0.5rem; margin-top: 2rem; }
-        table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.95rem}
-        th,td{padding:.55rem .65rem;border:1px solid #ccc;text-align:left}
-        th{background:var(--secondary-color);color:#fff}
-        tr:nth-child(even){background:#f2f6fa}
-        .timer{display:inline-flex;align-items:center;gap:.4rem;background:var(--accent-color);color:#fff;padding:.25rem .55rem;border-radius:4px;font-size:.85rem}
-        .main-nav {
-            background-color: var(--dark-color);
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        .main-nav .container-nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-        }
-        .main-nav ul {
-            list-style: none;
-            display: flex;
-            padding: 0;
-            margin: 0;
-        }
-        .main-nav ul li {
-            margin: 0 15px;
-        }
-        .main-nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .main-nav ul li a:hover, .main-nav ul li a.active {
-            background-color: var(--primary-color);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="main-nav">
-        <div class="container-nav">
+        <div class="container">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="Improntas.html">Tinción para Improntas</a></li>
                 <li><a href="Papanicolaou.html">Papanicolaou Modificado</a></li>
                 <li><a href="papanicolauclasico.html" class="active">Papanicolaou Clásico</a></li>
+                <li><a href="he-congelacion.html">H&E para Congelación</a></li>
+                <li><a href="improntas-sin-xilol.html">Improntas sin Xilol</a></li>
+                <li><a href="papanicolau-sin-xilol.html">Papanicolaou sin Xilol</a></li>
             </ul>
         </div>
     </nav>
 
-    <main class="container">
+    <main class="page-container">
         <h1>Guía técnica – Coloración Papanicolaou</h1>
         <p>Tiempos exactos, contingencias y controles de calidad para obtener láminas diagnósticas óptimas (temperatura ambiente 20-25 °C).</p>
 
