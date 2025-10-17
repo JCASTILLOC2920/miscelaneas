@@ -4,73 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Guía técnica – Coloración Papanicolaou Clásico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="main-nav">
-        <div class="container">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="Improntas.html">Tinción para Improntas</a></li>
-                <li><a href="Papanicolaou.html">Papanicolaou Modificado</a></li>
-                <li><a href="papanicolauclasico.html" class="active">Papanicolaou Clásico</a></li>
-                <li><a href="he-congelacion.html">H&E para Congelación</a></li>
-                <li><a href="improntas-sin-xilol.html">Improntas sin Xilol</a></li>
-                <li><a href="papanicolau-sin-xilol.html">Papanicolaou sin Xilol</a></li>
-            </ul>
+    <aside class="sidebar" id="main-sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-brand">
+                <span class="sidebar-brand-icon">AP</span>
+                <span class="sidebar-brand-text">Protocolos AP</span>
+            </a>
         </div>
-    </nav>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html" title="Inicio"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span><span class="sidebar-text">Inicio</span></a></li>
+                <li><a href="Improntas.html" title="Tinción para Improntas"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 2c1.11 0 2 .89 2 2s-.89 2-2 2-2-.89-2-2 .89-2 2-2z"/></svg></span><span class="sidebar-text">Tinción para Improntas</span></a></li>
+                <li><a href="Papanicolaou.html" title="Papanicolaou Modificado"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5zM5.12 5l.81-1h12l.94 1H5.12z"/></svg></span><span class="sidebar-text">Papanicolaou Modificado</span></a></li>
+                <li><a href="papanicolauclasico.html" class="active" title="Papanicolaou Clásico"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5zM5.12 5l.81-1h12l.94 1H5.12z"/></svg></span><span class="sidebar-text">Papanicolaou Clásico</span></a></li>
+                <li><a href="he-congelacion.html" title="H&E para Congelación"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg></span><span class="sidebar-text">H&E para Congelación</span></a></li>
+                <li><a href="he-congelacion-seguro.html" title="H&E Segura (sin Xileno)"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg></span><span class="sidebar-text">H&E Segura (sin Xileno)</span></a></li>
+                <li><a href="improntas-sin-xilol.html" title="Improntas sin Xilol"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 2c1.11 0 2 .89 2 2s-.89 2-2 2-2-.89-2-2 .89-2 2-2z"/></svg></span><span class="sidebar-text">Improntas sin Xilol</span></a></li>
+                <li><a href="papanicolau-sin-xilol.html" title="Papanicolaou sin Xilol"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5zM5.12 5l.81-1h12l.94 1H5.12z"/></svg></span><span class="sidebar-text">Papanicolaou sin Xilol</span></a></li>
+                <li><a href="formato-reporte-caso.html" title="Formato Reporte de Caso"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></span><span class="sidebar-text">Formato Reporte de Caso</span></a></li>
+                <li><a href="formularioreporteap.html" title="Generador de Prompts"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM8 11H6V9h2v2zm4 0h-2V9h2v2zm4 0h-2V9h2v2z"/></svg></span><span class="sidebar-text">Generador de Prompts</span></a></li>
+                <li><button id="prompt-diagnostico-btn" title="Generar Plantilla"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg></span><span class="sidebar-text">Generar Plantilla</span></button></li>
+            </ul>
+        </nav>
+    </aside>
 
-    <main class="page-container">
-        <h1>Guía técnica – Coloración Papanicolaou</h1>
-        <p>Tiempos exactos, contingencias y controles de calidad para obtener láminas diagnósticas óptimas (temperatura ambiente 20-25 °C).</p>
+    <button class="sidebar-toggle" aria-label="Alternar menú" aria-controls="main-sidebar" aria-expanded="false">
+        <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
 
-        <h2>1. Pre-coloración</h2>
-        <table>
-          <thead><tr><th>Paso</th><th>Reactivo</th><th>Tiempo</th><th>Notas críticas</th></tr></thead>
-          <tbody>
-            <tr><td>1</td><td>Fijación Alcohol-Eter 1:1</td><td><span class="timer">30 min</span> (máx 24 h)</td><td>Tapar; evita autolisis</td></tr>
-            <tr><td>2</td><td>Hidratación – Agua corriente</td><td><span class="timer">2 min</span></td><td>Cambiar si el agua se enturbia</td></tr>
-          </tbody>
-        </table>
+    <div class="main-content">
+        <main class="page-container">
+            <h1>Guía técnica – Coloración Papanicolaou</h1>
+            <p>Tiempos exactos, contingencias y controles de calidad para obtener láminas diagnósticas óptimas (temperatura ambiente 20-25 °C).</p>
 
-        <h2>2. Tinción nuclear (Hematoxilina Harris)</h2>
-        <table>
-          <thead><tr><th>Paso</th><th>Reactivo</th><th>Tiempo</th><th>Indicadores / control</th></tr></thead>
-          <tbody>
-            <tr><td>3</td><td>Hematoxilina Harris</td><td><span class="timer">2 min 30 s</span></td><td>Filtrar antes de usar</td></tr>
-            <tr><td>4</td><td>Agua corriente</td><td><span class="timer">30 s</span></td><td>Lavado por arrastre</td></tr>
-            <tr><td>5</td><td>Diferenciación HCl 1 %</td><td><span class="timer">3-5 s</span></td><td>Fondo apenas claro</td></tr>
-            <tr><td>6</td><td>Agua corriente</td><td><span class="timer">30 s</span></td><td>Detener ácido</td></tr>
-            <tr><td>7</td><td>Azulación – Agua amoniacal</td><td><span class="timer">30-45 s</span></td><td>Núcleo azul intenso</td></tr>
-            <tr><td>8</td><td>Agua corriente</td><td><span class="timer">2 min</span></td><td>Eliminar alcali; secar borde</td></tr>
-          </tbody>
-        </table>
+            <h2>1. Pre-coloración</h2>
+            <div class="table-container">
+                <table>
+                  <thead><tr><th>Paso</th><th>Reactivo</th><th>Tiempo</th><th class="columna-opcional">Notas críticas</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>Fijación Alcohol-Eter 1:1</td><td><span class="timer">30 min</span> (máx 24 h)</td><td>Tapar; evita autolisis</td></tr>
+                    <tr><td>2</td><td>Hidratación – Agua corriente</td><td><span class="timer">2 min</span></td><td>Cambiar si el agua se enturbia</td></tr>
+                  </tbody>
+                </table>
+            </div>
 
-        <h2>3. Tinción citoplasmática</h2>
-        <table>
-          <thead><tr><th>Paso</th><th>Reactivo</th><th>Tiempo</th><th>Objetivo / observación</th></tr></thead>
-          <tbody>
-            <tr><td>9</td><td>Alcohol 96 %</td><td><span class="timer">30 s</span></td><td>Pre-deshidratación</td></tr>
-            <tr><td>10</td><td>Orange G</td><td><span class="timer">1 min 30 s</span></td><td>Queratina → naranja</td></tr>
-            <tr><td>11</td><td>Alcohol 96 %</td><td><span class="timer">30 s</span></td><td>Lavado</td></tr>
-            <tr><td>12</td><td>EA-50</td><td><span class="timer">2 min</span></td><td>Citoplasma: rosa/verde/pardo</td></tr>
-            <tr><td>13</td><td>Alcohol 96 %</td><td><span class="timer">30 s</span></td><td>Retirar colorante libre</td></tr>
-            <tr><td>14</td><td>Alcohol 96 % (2.º baño)</td><td><span class="timer">30 s</span></td><td>Asegura limpieza</td></tr>
-          </tbody>
-        </table>
+            <h2>2. Tinción nuclear (Hematoxilina Harris)</h2>
+            <div class="table-container">
+                <table>
+                  <thead><tr><th>Paso</th><th>Reactivo</th><th>Tiempo</th><th class="columna-opcional">Indicadores / control</th></tr></thead>
+                  <tbody>
+                    <tr><td>3</td><td>Hematoxilina Harris</td><td><span class="timer">2 min 30 s</span></td><td>Filtrar antes de usar</td></tr>
+                    <tr><td>4</td><td>Agua corriente</td><td><span class="timer">30 s</span></td><td>Lavado por arrastre</td></tr>
+                    <tr><td>5</td><td>Diferenciación HCl 1 %</td><td><span class="timer">3-5 s</span></td><td>Fondo apenas claro</td></tr>
+                    <tr><td>6</td><td>Agua corriente</td><td><span class="timer">30 s</span></td><td>Detener ácido</td></tr>
+                    <tr><td>7</td><td>Azulación – Agua amoniacal</td><td><span class="timer">30-45 s</span></td><td>Núcleo azul intenso</td></tr>
+                    <tr><td>8</td><td>Agua corriente</td><td><span class="timer">2 min</span></td><td>Eliminar alcali; secar borde</td></tr>
+                  </tbody>
+                </table>
+            </div>
 
-        <h2>4. Deshidratación – Aclaramiento – Montaje</h2>
-        <table>
-          <thead><tr><th>Paso</th><th>Reactivo</th><th>Tiempo</th><th>Indicador</th></tr></thead>
-          <tbody>
-            <tr><td>15</td><td>Alcohol absoluto I</td><td><span class="timer">1 min</span></td><td>Sin turbidez</td></tr>
-            <tr><td>16</td><td>Alcohol absoluto II</td><td><span class="timer">1 min</span></td><td>Deshidratación completa</td></tr>
-            <tr><td>17</td><td>Xilol I</td><td><span class="timer">1 min</span></td><td>Muestra transparente</td></tr>
-            <tr><td>18</td><td>Xilol II</td><td><span class="timer">1 min</span></td><td>Bordes irisados</td></tr>
-            <tr><td>19</td><td>Resina de montaje</td><td>Inmediato</td><td>Sin burbujas; índice refracción 1,48-1,52</td></tr>
-          </tbody>
-        </table>
-    </main>
+            <h2>3. Tinción citoplasmática</h2>
+            <div class="table-container">
+                <table>
+                  <thead><tr><th>Paso</th><th>Reactivo</th><th>Tiempo</th><th class="columna-opcional">Objetivo / observación</th></tr></thead>
+                  <tbody>
+                    <tr><td>9</td><td>Alcohol 96 %</td><td><span class="timer">30 s</span></td><td>Pre-deshidratación</td></tr>
+                    <tr><td>10</td><td>Orange G</td><td><span class="timer">1 min 30 s</span></td><td>Queratina → naranja</td></tr>
+                    <tr><td>11</td><td>Alcohol 96 %</td><td><span class="timer">30 s</span></td><td>Lavado</td></tr>
+                    <tr><td>12</td><td>EA-50</td><td><span class="timer">2 min</span></td><td>Citoplasma: rosa/verde/pardo</td></tr>
+                    <tr><td>13</td><td>Alcohol 96 %</td><td><span class="timer">30 s</span></td><td>Retirar colorante libre</td></tr>
+                    <tr><td>14</td><td>Alcohol 96 % (2.º baño)</td><td><span class="timer">30 s</span></td><td>Asegura limpieza</td></tr>
+                  </tbody>
+                </table>
+            </div>
+
+            <h2>4. Deshidratación – Aclaramiento – Montaje</h2>
+            <div class="table-container">
+                <table>
+                  <thead><tr><th>Paso</th><th>Reactivo</th><th>Tiempo</th><th class="columna-opcional">Indicador</th></tr></thead>
+                  <tbody>
+                    <tr><td>15</td><td>Alcohol absoluto I</td><td><span class="timer">1 min</span></td><td>Sin turbidez</td></tr>
+                    <tr><td>16</td><td>Alcohol absoluto II</td><td><span class="timer">1 min</span></td><td>Deshidratación completa</td></tr>
+                    <tr><td>17</td><td>Xilol I</td><td><span class="timer">1 min</span></td><td>Muestra transparente</td></tr>
+                    <tr><td>18</td><td>Xilol II</td><td><span class="timer">1 min</span></td><td>Bordes irisados</td></tr>
+                    <tr><td>19</td><td>Resina de montaje</td><td>Inmediato</td><td>Sin burbujas; índice refracción 1,48-1,52</td></tr>
+                  </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal para Prompt Diagnóstico -->
+    <div id="modal-prompt" class="modal">
+        <div class="modal-content">
+            <h2>Colocar Diagnóstico</h2>
+            <label for="input-diagnostico">Introduce el diagnóstico:</label>
+            <input type="text" id="input-diagnostico" placeholder="Ej: adenocarcinoma de pulmón">
+            <div class="modal-buttons">
+                <button id="cancelar-btn" class="btn btn-secondary">Cancelar</button>
+                <button id="generar-btn" class="btn btn-primary">Generar</button>
+            </div>
+            <div class="result-container" id="result-container">
+                <p class="copy-message" id="copy-message">¡Texto copiado al portapapeles!</p>
+                <div class="result-text" id="result-text"></div>
+                <div class="modal-buttons">
+                    <button id="copiar-btn" class="btn btn-primary">Copiar y Abrir DeepSeek</button>
+                    <button id="cerrar-btn" class="btn btn-secondary">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>

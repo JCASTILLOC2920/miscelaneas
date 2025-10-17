@@ -1,18 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Lógica para el Menú Lateral ---
-    const sidebar = document.querySelector('.sidebar');
-    const menuToggle = document.querySelector('.menu-toggle');
-    const body = document.body;
+    // --- Lógica para el Menú Lateral Retráctil ---
+    const sidebar = document.getElementById('main-sidebar');
+    const toggleBtn = document.querySelector('.sidebar-toggle');
+    const mainContent = document.querySelector('.main-content');
+    const sidebarStateKey = 'sidebarState';
 
-    if (menuToggle && sidebar) {
-        menuToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('expanded');
-            if (window.innerWidth > 767) {
-                body.classList.toggle('sidebar-expanded');
+    const applySidebarState = (state) => {
+        if (state === 'active') {
+            sidebar.classList.add('is-active');
+            toggleBtn.classList.add('is-active');
+            toggleBtn.setAttribute('aria-expanded', 'true');
+            if (window.innerWidth >= 768) {
+                mainContent.classList.add('sidebar-active');
             }
-        });
-    }
+        } else {
+            sidebar.classList.remove('is-active');
+            toggleBtn.classList.remove('is-active');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            if (window.innerWidth >= 768) {
+                mainContent.classList.remove('sidebar-active');
+            }
+        }
+    };
 
+    // Cargar estado guardado
+    const savedState = localStorage.getItem(sidebarStateKey);
+    // Por defecto, expandido en desktop, colapsado en móvil
+    const defaultState = window.innerWidth >= 768 ? 'active' : 'collapsed';
+    applySidebarState(savedState || defaultState);
+
+    toggleBtn.addEventListener('click', () => {
+        const currentState = sidebar.classList.contains('is-active') ? 'active' : 'collapsed';
+        const newState = currentState === 'active' ? 'collapsed' : 'active';
+        localStorage.setItem(sidebarStateKey, newState);
+        applySidebarState(newState);
+    });
+
+    // Cerrar menú en móvil al hacer clic en un enlace
+    sidebar.addEventListener('click', (e) => {
+        if (window.innerWidth < 768 && (e.target.closest('a') || e.target.closest('button'))) {
+            localStorage.setItem(sidebarStateKey, 'collapsed');
+            applySidebarState('collapsed');
+        }
+    });
+    
     // --- Lógica para el Modal de Prompt Diagnóstico (index.html) ---
     const modalPrompt = document.getElementById('modal-prompt');
     if (modalPrompt) {

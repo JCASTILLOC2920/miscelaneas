@@ -4,379 +4,233 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Método de Coloración Rápida H&E para Cortes por Congelación</title>
-    <style>
-        :root {
-            --primary-color: #4a6fa5;
-            --secondary-color: #166088;
-            --accent-color: #4cb5ae;
-            --light-color: #f8f9fa;
-            --dark-color: #343a40;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        h1, h2, h3, h4 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        h1 { font-size: 2.2rem; }
-        h2 { font-size: 1.8rem; border-bottom: 2px solid var(--secondary-color); padding-bottom: 0.5rem; margin-top: 2rem; }
-        h3 { font-size: 1.4rem; color: var(--secondary-color); }
-        h4 { font-size: 1.2rem; color: var(--primary-color); margin-top: 1.5rem; }
-        ul, ol {
-            padding-left: 20px;
-            margin-bottom: 1rem;
-        }
-        li {
-            margin-bottom: 0.5rem;
-        }
-        strong {
-            color: var(--dark-color);
-        }
-        hr {
-            border: 0;
-            height: 1px;
-            background: #ddd;
-            margin: 2rem 0;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            font-size: .95rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        th, td {
-            padding: .75rem;
-            border: 1px solid #ccc;
-            text-align: left;
-        }
-        th {
-            background: var(--secondary-color);
-            color: #fff;
-        }
-        tr:nth-child(even) {
-            background: #f2f6fa;
-        }
-        .timer {
-            display: inline-flex;
-            align-items: center;
-            gap: .4rem;
-            background: var(--accent-color);
-            color: #fff;
-            padding: .25rem .55rem;
-            border-radius: 4px;
-            font-size: .85rem;
-            font-weight: bold;
-        }
-        .main-nav {
-            background-color: var(--dark-color);
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        .main-nav .container-nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-        }
-        .main-nav ul {
-            list-style: none;
-            display: flex;
-            padding: 0;
-            margin: 0;
-        }
-        .main-nav ul li {
-            margin: 0 15px;
-        }
-        .main-nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .main-nav ul li a:hover, .main-nav ul li a.active {
-            background-color: var(--primary-color);
-        }
-        /* Estilos para el desplegable */
-        details {
-            border: 1px solid #e1e8ed;
-            border-radius: 8px;
-            margin: 2rem 0;
-            background-color: #f9fbfd;
-        }
-        summary {
-            font-weight: bold;
-            padding: 1rem;
-            cursor: pointer;
-            color: var(--secondary-color);
-            font-size: 1.2rem;
-            list-style: none; /* Remove default marker */
-        }
-        summary::-webkit-details-marker { display: none; }
-        summary::before {
-            content: '▶ ';
-            margin-right: 0.5rem;
-            transition: transform 0.2s;
-        }
-        details[open] > summary::before {
-            transform: rotate(90deg);
-        }
-        .details-content {
-            padding: 0 1.5rem 1.5rem 1.5rem;
-            border-top: 1px solid #e1e8ed;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="main-nav">
-        <div class="container-nav">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="Improntas.html">Tinción para Improntas</a></li>
-                <li><a href="Papanicolaou.html">Papanicolaou Modificado</a></li>
-                <li><a href="papanicolauclasico.html">Papanicolaou Clásico</a></li>
-                <li><a href="he-congelacion.html" class="active">H&E para Congelación</a></li>
-                <li><a href="improntas-sin-xilol.html">Improntas sin Xilol</a></li>
-                <li><a href="papanicolau-sin-xilol.html">Papanicolaou sin Xilol</a></li>
-            </ul>
+    <aside class="sidebar" id="main-sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-brand">
+                <span class="sidebar-brand-icon">AP</span>
+                <span class="sidebar-brand-text">Protocolos AP</span>
+            </a>
         </div>
-    </nav>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html" title="Inicio"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span><span class="sidebar-text">Inicio</span></a></li>
+                <li><a href="Improntas.html" title="Tinción para Improntas"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 2c1.11 0 2 .89 2 2s-.89 2-2 2-2-.89-2-2 .89-2 2-2z"/></svg></span><span class="sidebar-text">Tinción para Improntas</span></a></li>
+                <li><a href="Papanicolaou.html" title="Papanicolaou Modificado"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5zM5.12 5l.81-1h12l.94 1H5.12z"/></svg></span><span class="sidebar-text">Papanicolaou Modificado</span></a></li>
+                <li><a href="papanicolauclasico.html" title="Papanicolaou Clásico"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5zM5.12 5l.81-1h12l.94 1H5.12z"/></svg></span><span class="sidebar-text">Papanicolaou Clásico</span></a></li>
+                <li><a href="he-congelacion.html" class="active" title="H&E para Congelación"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg></span><span class="sidebar-text">H&E para Congelación</span></a></li>
+                <li><a href="he-congelacion-seguro.html" title="H&E Segura (sin Xileno)"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg></span><span class="sidebar-text">H&E Segura (sin Xileno)</span></a></li>
+                <li><a href="improntas-sin-xilol.html" title="Improntas sin Xilol"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 2c1.11 0 2 .89 2 2s-.89 2-2 2-2-.89-2-2 .89-2 2-2z"/></svg></span><span class="sidebar-text">Improntas sin Xilol</span></a></li>
+                <li><a href="papanicolau-sin-xilol.html" title="Papanicolaou sin Xilol"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5zM5.12 5l.81-1h12l.94 1H5.12z"/></svg></span><span class="sidebar-text">Papanicolaou sin Xilol</span></a></li>
+                <li><a href="formato-reporte-caso.html" title="Formato Reporte de Caso"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></span><span class="sidebar-text">Formato Reporte de Caso</span></a></li>
+                <li><a href="formularioreporteap.html" title="Generador de Prompts"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM8 11H6V9h2v2zm4 0h-2V9h2v2zm4 0h-2V9h2v2z"/></svg></span><span class="sidebar-text">Generador de Prompts</span></a></li>
+                <li><button id="prompt-diagnostico-btn" title="Generar Plantilla"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg></span><span class="sidebar-text">Generar Plantilla</span></button></li>
+            </ul>
+        </nav>
+    </aside>
 
-    <main class="container">
-        <h1>Método de Coloración Rápida: Hematoxilina y Eosina (H&E) para Cortes por Congelación</h1>
-        <p>El principio es el mismo que para tejidos incluidos en parafina, pero los tiempos se acortan drásticamente, sacrificando un poco la finura del detalle a cambio de la velocidad.</p>
+    <button class="sidebar-toggle" aria-label="Alternar menú" aria-controls="main-sidebar" aria-expanded="false">
+        <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
 
-        <details>
-            <summary>Materiales y Reactivos Necesarios</summary>
-            <div class="details-content">
-                <ul>
-                    <li><strong>Criostato:</strong> Para obtener el corte.</li>
-                    <li><strong>Portaobjetos:</strong> Preferiblemente cargados positivamente (adherentes) para evitar que el tejido se desprenda.</li>
-                    <li><strong>Fijador de elección:</strong> Alcohol Isopropílico al 95% o 100%. Es rápido y evita la formación de cristales de hielo (artefacto) mejor que el formol en este contexto.</li>
-                    <li><strong>Hematoxilina:</strong> Una de progresión rápida (ej: Harris, Gill). Debe estar filtrada diariamente.</li>
-                    <li><strong>Eosina:</strong> Solución acuosa o alcohólica.</li>
-                    <li><strong>Baños de Alcohol:</strong> Para la deshidratación (Alcohol 95% y 100%).</li>
-                    <li><strong>Baños de Xileno:</strong> Para el aclarado.</li>
-                    <li><strong>Medio de Montaje:</strong> Resina sintética (ej: Entellan, DPX).</li>
-                    <li><strong>Cronómetro o Temporizador.</strong></li>
-                </ul>
+    <div class="main-content">
+        <main class="page-container">
+            <h1>Método de Coloración Rápida: Hematoxilina y Eosina (H&E) para Cortes por Congelación</h1>
+            <p>El principio es el mismo que para tejidos incluidos en parafina, pero los tiempos se acortan drásticamente, sacrificando un poco la finura del detalle a cambio de la velocidad.</p>
+
+            <details>
+                <summary>Materiales y Reactivos Necesarios</summary>
+                <div class="details-content">
+                    <ul>
+                        <li><strong>Criostato:</strong> Para obtener el corte.</li>
+                        <li><strong>Portaobjetos:</strong> Preferiblemente cargados positivamente (adherentes) para evitar que el tejido se desprenda.</li>
+                        <li><strong>Fijador de elección:</strong> Alcohol Isopropílico al 95% o 100%. Es rápido y evita la formación de cristales de hielo (artefacto) mejor que el formol en este contexto.</li>
+                        <li><strong>Hematoxilina:</strong> Una de progresión rápida (ej: Harris, Gill). Debe estar filtrada diariamente.</li>
+                        <li><strong>Eosina:</strong> Solución acuosa o alcohólica.</li>
+                        <li><strong>Baños de Alcohol:</strong> Para la deshidratación (Alcohol 95% y 100%).</li>
+                        <li><strong>Baños de Xileno:</strong> Para el aclarado.</li>
+                        <li><strong>Medio de Montaje:</strong> Resina sintética (ej: Entellan, DPX).</li>
+                        <li><strong>Cronómetro o Temporizador.</strong></li>
+                    </ul>
+                </div>
+            </details>
+
+            <details open>
+                <summary>Procedimiento Paso a Paso (Protocolo Rápido ~60 segundos)</summary>
+                <div class="details-content table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Paso</th>
+                                <th>Procedimiento</th>
+                                <th>Tiempo</th>
+                                <th class="columna-opcional">Propósito y Observaciones Clave</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1. Fijación</td><td>Sumergir el portaobjetos con el corte en <strong>Alcohol Isopropílico 95-100%</strong>.</td><td><span class="timer">~10 s</span></td><td>Fija las proteínas y evita artefactos. <strong>Paso crítico para la calidad.</strong></td></tr>
+                            <tr><td>2. Lavado</td><td>Enjuagar con <strong>agua corriente</strong>.</td><td><span class="timer">~5 s</span></td><td>Hidrata el tejido para la tinción nuclear.</td></tr>
+                            <tr><td>3. Tinción Nuclear</td><td>Sumergir en <strong>Hematoxilina</strong>.</td><td><span class="timer">~15 s</span></td><td>Tiñe los núcleos de azul-violáceo. Ajustar según la fuerza del colorante.</td></tr>
+                            <tr><td>4. Lavado</td><td>Enjuagar con <strong>agua corriente</strong>.</td><td><span class="timer">~5 s</span></td><td>Elimina el exceso de hematoxilina.</td></tr>
+                            <tr><td>5. "Azuleo"</td><td>Sumergir en <strong>agua amoniacal</strong> o <strong>agua de litio</strong>.</td><td><span class="timer">~5 s</span></td><td>Vira el color del núcleo a un azul brillante. <strong>No omitir.</strong></td></tr>
+                            <tr><td>6. Lavado</td><td>Enjuagar con <strong>agua corriente</strong>.</td><td><span class="timer">~5 s</span></td><td>Elimina el exceso de solución alcalina.</td></tr>
+                            <tr><td>7. Tinción Citoplasmática</td><td>Sumergir en <strong>Eosina</strong>.</td><td><span class="timer">~5 s</span></td><td>Tiñe citoplasma y estroma de tonos rosados.</td></tr>
+                            <tr><td>8. Deshidratación</td><td>Sumergir en <strong>Alcohol 95%</strong>, luego en <strong>Alcohol 100%</strong>.</td><td><span class="timer">~5 s c/u</span></td><td>Elimina el agua del tejido para permitir el aclarado.</td></tr>
+                            <tr><td>9. Aclarado</td><td>Sumergir en <strong>Xileno</strong> (2 baños).</td><td><span class="timer">~5 s c/u</span></td><td>Reemplaza el alcohol y hace el tejido transparente.</td></tr>
+                            <tr><td>10. Montaje</td><td>Colocar <strong>medio de montaje</strong> y cubreobjetos.</td><td>-</td><td>Sella la muestra para observación. Evitar burbujas.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+
+            <details>
+                <summary>Consideraciones Profesionales</summary>
+                <div class="details-content">
+                    <ul>
+                        <li><strong>Velocidad vs. Calidad:</strong> Se prioriza la velocidad para el cirujano. Es normal que la calidad no sea tan perfecta como en un bloque de parafina.</li>
+                        <li><strong>Calidad del Congelado:</strong> Un buen corte es la base. Si el tejido está mal congelado (cristales de hielo), la tinción será pobre.</li>
+                        <li><strong>Espesor del Corte:</strong> Los cortes son más gruesos (5-10 µm), lo que puede dar una apariencia menos nítida.</li>
+                        <li><strong>Control de Reactivos:</strong> Verificar siempre los reactivos. Una hematoxilina vieja dará un resultado pálido.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>Alternativas para el "Azuleo" (Blueing) en una situación de urgencia</summary>
+                <div class="details-content">
+                    <p>El propósito del "azuleo" es elevar el pH del tejido para que la hematoxilina (que es rojiza/marrón en medio ácido) se transforme en su color azul púrpura característico, lo que proporciona un máximo contraste nuclear.</p>
+                    <p>Si no tiene agua amoniacal ni carbonato de litio, aquí están sus opciones, ordenadas por eficacia:</p>
+                    
+                    <h4>Opción 1: Sustitutos Directos (Los más recomendables)</h4>
+                    <h5>Agua del grifo ligeramente alcalina (La alternativa más común):</h5>
+                    <ul>
+                        <li><strong>Procedimiento:</strong> Deje correr el agua del grifo sobre el portaobjetos por 30-60 segundos.</li>
+                        <li><strong>Fundamento:</strong> El agua de la red de suministro suele tener un pH ligeramente básico (7.5 - 8.5) debido a los tratamientos de potabilización. Este pH es suficiente para lograr un "azuleo" aceptable, aunque será más lento.</li>
+                        <li><strong>Consejo:</strong> Si el agua de su zona es muy blanda o ácida, esta opción no funcionará bien.</li>
+                    </ul>
+
+                    <h5>Solución de Bicarbonato de Sodio:</h5>
+                    <ul>
+                        <li><strong>Preparación:</strong> Añada una pizca (aproximadamente 0.5 gramos) de bicarbonato de sodio (de cocina) a 250-500 ml de agua destilada o del grifo. Agite suavemente.</li>
+                        <li><strong>Procedimiento:</strong> Sumerja el portaobjetos en esta solución o haga un lavado directo durante 20-30 segundos.</li>
+                        <li><strong>Fundamento:</strong> El bicarbonato de sodio (NaHCO₃) crea una solución ligeramente alcalina (pH ~8.3), perfecta para el azuleo.</li>
+                        <li><strong>Precaución:</strong> No hacer la solución demasiado concentrada, ya que puede dañar el tejido o precipitar.</li>
+                    </ul>
+
+                    <h4>Opción 2: Modificación del Protocolo (Eliminando el paso de "Azuleo")</h4>
+                    <p>Si no tiene nada para alcalinizar, puede modificar la secuencia. La calidad no será óptima, pero el diagnóstico suele ser posible.</p>
+                    <h5>Protocolo Modificado Rápido (Sin Azuleo):</h5>
+                    <ol>
+                        <li><strong>Fijación:</strong> Alcohol Isopropílico 95-100% - 30 segundos.</li>
+                        <li><strong>Lavado en Agua:</strong> Enjuague RÁPIDO (2-3 segundos) para quitar el exceso de alcohol.</li>
+                        <li><strong>Hematoxilina:</strong> Tiempo reducido a 10-15 segundos. Con menos tiempo, el núcleo se tiñe pero no se sobrecarga tanto de colorante ácido, por lo que el cambio de color es menos crítico.</li>
+                        <li><strong>"Lavado Azulador" Prolongado:</strong> Enjuague con agua corriente el mayor tiempo que pueda permitirse (45-60 segundos). Este lavado prolongado ayuda a eliminar el exceso de hematoxilina y, con el pH del agua, proporciona un azuleo muy tenue pero a menudo suficiente.</li>
+                        <li><strong>Eosina:</strong> 5-10 segundos. Como los núcleos estarán menos azules y más rojizos, use menos tiempo de eosina para evitar un contraste excesivo de rojo sobre rojo.</li>
+                        <li>Continúe con la deshidratación y el montaje como es habitual.</li>
+                    </ol>
+                    <p><strong>Resultado Esperado:</strong> Los núcleos se verán de un color azul grisáceo o púrpura apagado. El contraste será menor, pero un patólogo experimentado podrá distinguir las estructuras celulares.</p>
+
+                    <h4>Opción 3: Soluciones de Emergencia (Menos Ideales, pero Funcionales)</h4>
+                    <ul>
+                        <li><strong>Jabón Diluido:</strong> Una gota de jabón líquido neutro para manos en un vaso de agua. El pH será básico. Enjuague muy bien después para evitar manchas.</li>
+                        <li><strong>Saliva (Último recurso):</strong> La saliva tiene un pH ligeramente alcalino. Es una opción teórica y antihigiénica, no recomendable en un laboratorio.</li>
+                    </ul>
+
+                    <h4>Conclusión y Recomendación Profesional</h4>
+                    <p>Mi recomendación prioritaria es la <strong>Opción 1B: Solución de Bicarbonato de Sodio</strong>. Es fácil, barata y efectiva. Si no es posible, la <strong>Opción 2 (Modificación del Protocolo)</strong> es una alternativa viable. Recuerde: en la tinción por congelación, la fijación rápida y correcta con alcohol es aún más crítica que el azuleo para preservar la morfología celular.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Método Alternativo Ultra-Rápido (Tinción Monocromática)</summary>
+                <div class="details-content">
+                    <p>Para una evaluación muy rápida (ej. confirmar presencia de tejido), se puede usar:</p>
+                    <ul>
+                        <li><strong>Azul de Toluidina:</strong> Una inmersión y lavado rápido tiñe núcleos y cartílago.</li>
+                        <li><strong>Rojo Sudan o Oil Red O:</strong> Específicos para teñir lípidos (grasa) en rojo/anaranjado.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>Alternativas al Xileno (Sustitutos de Aclarado)</summary>
+                <div class="details-content">
+                    <p>Estos productos se conocen como "sustitutos seguros del xileno" o "aclarantes no tóxicos". Son menos volátiles y menos peligrosos para la salud.</p>
+
+                    <h4>Opción 1: Sustitutos Comerciales Directos (Los más recomendables)</h4>
+                    <p>Son los que debe intentar conseguir a medio plazo. Suelen estar basados en disolventes de aceites vegetales (limoneno) o hidrocarburos alifáticos.</p>
+                    <ul>
+                        <li><strong>Ejemplos:</strong> Histo-Clear®, SafeClear®, CitriSolv®, Sub-X®.</li>
+                        <li><strong>Procedimiento:</strong> Se usan exactamente igual que el xileno. Dos baños de 1-2 minutos cada uno.</li>
+                        <li><strong>Ventaja:</strong> Son mucho menos tóxicos que el xileno y no emiten vapores peligrosos.</li>
+                        <li><strong>Desventaja:</strong> Pueden ser más costosos y, en algunos casos, dejar un olor cítrico residual.</li>
+                    </ul>
+
+                    <h4>Opción 2: Tolueno o Benceno (Alternativas Químicas Clásicas)</h4>
+                    <ul>
+                        <li><strong>Procedimiento:</strong> Idéntico al del xileno.</li>
+                        <li><strong>Advertencia CRUCIAL: NO SE RECOMIENDAN.</strong> El benceno es carcinógeno reconocido. El tolueno es menos tóxico que el xileno pero aún así es un peligro para la salud por inhalación y absorción cutánea. Solo deben usarse en campanas de extracción de gases.</li>
+                    </ul>
+
+                    <h4>Opción 3: Modificación del Protocolo (Para Emergencias sin ningún Aclarante)</h4>
+                    <p>Si no tiene acceso a NINGÚN aclarante, puede intentar esta modificación. La calidad se verá afectada, pero la lámina puede ser diagnosticable.</p>
+                    <h5>Protocolo de Emergencia: "Montaje Húmedo" o "Montaje Directo desde Alcohol"</h5>
+                    <p>Este método evita por completo la necesidad de un aclarante.</p>
+                    <ol>
+                        <li>Siga los pasos normales hasta la Eosina y el primer baño de Alcohol 95%.</li>
+                        <li><strong>Deshidratación AGRESIVA:</strong> Pase la lámina por TRES baños sucesivos de Alcohol Isopropílico o Etanol al 100% (absoluto) durante 1 minuto cada uno. Es crítico eliminar TODA traza de agua.</li>
+                        <li><strong>Montaje con Medio Soluble en Alcohol (Paso Clave):</strong> El medio de montaje estándar (DPX, Entellan) no es miscible con alcohol. Necesita un medio de montaje específico soluble en alcohol, como la <strong>Glicerina gelatina</strong>. Saque la lámina del último baño de alcohol, escurra el exceso, coloque una gota generosa de glicerina gelatina y cubra.</li>
+                    </ol>
+
+                    <h4>Resumen de Recomendaciones en Orden de Prioridad</h4>
+                    <ul>
+                        <li><strong>Mejor Opción (Seguridad y Calidad):</strong> Adquirir un sustituto comercial del xileno (ej: Histo-Clear, SafeClear).</li>
+                        <li><strong>Opción para Emergencia (Calidad Aceptable):</strong> Usar Tolueno con extrema precaución y en una campana de extracción.</li>
+                        <li><strong>Opción para Emergencia Extrema (Diagnóstico de Salvamento):</strong> Usar el protocolo modificado con deshidratación agresiva en alcohol 100% y montaje con glicerina gelatina.</li>
+                    </ul>
+
+                    <h4>Consecuencias de no usar un aclarante o sustituto adecuado:</h4>
+                    <ul>
+                        <li><strong>Lámina Turbia o Lechosa:</strong> Debido a la incompatibilidad entre el alcohol y el medio de montaje.</li>
+                        <li><strong>Mala Resolución Microscópica:</strong> La turbidez impide ver los detalles celulares finos.</li>
+                        <li><strong>Tinción No Permanente:</strong> La lámina se secará o se estropeará rápidamente.</li>
+                    </ul>
+                    <p><strong>En conclusión:</strong> Para un trabajo de rutina y de calidad, los sustitutos comerciales del xileno son la mejor opción. En una emergencia absoluta, el protocolo de montaje con glicerina gelatina desde alcohol puede salvar la situación.</p>
+                </div>
+            </details>
+
+            <hr>
+            <p><strong>En resumen:</strong> El método estándar de oro para la coloración de cortes por congelación es la <strong>H&E Rápida</strong>, utilizando alcohol como fijador y optimizando todos los tiempos para obtener un diagnóstico fiable en menos de un minuto después de obtener el corte.</p>
+        </main>
+    </div>
+
+    <!-- Modal para Prompt Diagnóstico -->
+    <div id="modal-prompt" class="modal">
+        <div class="modal-content">
+            <h2>Colocar Diagnóstico</h2>
+            <label for="input-diagnostico">Introduce el diagnóstico:</label>
+            <input type="text" id="input-diagnostico" placeholder="Ej: adenocarcinoma de pulmón">
+            <div class="modal-buttons">
+                <button id="cancelar-btn" class="btn btn-secondary">Cancelar</button>
+                <button id="generar-btn" class="btn btn-primary">Generar</button>
             </div>
-        </details>
-
-        <details open>
-            <summary>Procedimiento Paso a Paso (Protocolo Rápido ~60 segundos)</summary>
-            <div class="details-content">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Paso</th>
-                            <th>Procedimiento</th>
-                            <th>Tiempo</th>
-                            <th>Propósito y Observaciones Clave</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>1. Fijación</td><td>Sumergir el portaobjetos con el corte en <strong>Alcohol Isopropílico 95-100%</strong>.</td><td><span class="timer">~10 s</span></td><td>Fija las proteínas y evita artefactos. <strong>Paso crítico para la calidad.</strong></td></tr>
-                        <tr><td>2. Lavado</td><td>Enjuagar con <strong>agua corriente</strong>.</td><td><span class="timer">~5 s</span></td><td>Hidrata el tejido para la tinción nuclear.</td></tr>
-                        <tr><td>3. Tinción Nuclear</td><td>Sumergir en <strong>Hematoxilina</strong>.</td><td><span class="timer">~15 s</span></td><td>Tiñe los núcleos de azul-violáceo. Ajustar según la fuerza del colorante.</td></tr>
-                        <tr><td>4. Lavado</td><td>Enjuagar con <strong>agua corriente</strong>.</td><td><span class="timer">~5 s</span></td><td>Elimina el exceso de hematoxilina.</td></tr>
-                        <tr><td>5. "Azuleo"</td><td>Sumergir en <strong>agua amoniacal</strong> o <strong>agua de litio</strong>.</td><td><span class="timer">~5 s</span></td><td>Vira el color del núcleo a un azul brillante. <strong>No omitir.</strong></td></tr>
-                        <tr><td>6. Lavado</td><td>Enjuagar con <strong>agua corriente</strong>.</td><td><span class="timer">~5 s</span></td><td>Elimina el exceso de solución alcalina.</td></tr>
-                        <tr><td>7. Tinción Citoplasmática</td><td>Sumergir en <strong>Eosina</strong>.</td><td><span class="timer">~5 s</span></td><td>Tiñe citoplasma y estroma de tonos rosados.</td></tr>
-                        <tr><td>8. Deshidratación</td><td>Sumergir en <strong>Alcohol 95%</strong>, luego en <strong>Alcohol 100%</strong>.</td><td><span class="timer">~5 s c/u</span></td><td>Elimina el agua del tejido para permitir el aclarado.</td></tr>
-                        <tr><td>9. Aclarado</td><td>Sumergir en <strong>Xileno</strong> (2 baños).</td><td><span class="timer">~5 s c/u</span></td><td>Reemplaza el alcohol y hace el tejido transparente.</td></tr>
-                        <tr><td>10. Montaje</td><td>Colocar <strong>medio de montaje</strong> y cubreobjetos.</td><td>-</td><td>Sella la muestra para observación. Evitar burbujas.</td></tr>
-                    </tbody>
-                </table>
+            <div class="result-container" id="result-container">
+                <p class="copy-message" id="copy-message">¡Texto copiado al portapapeles!</p>
+                <div class="result-text" id="result-text"></div>
+                <div class="modal-buttons">
+                    <button id="copiar-btn" class="btn btn-primary">Copiar y Abrir DeepSeek</button>
+                    <button id="cerrar-btn" class="btn btn-secondary">Cerrar</button>
+                </div>
             </div>
-        </details>
+        </div>
+    </div>
 
-        <details>
-            <summary>Consideraciones Profesionales</summary>
-            <div class="details-content">
-                <ul>
-                    <li><strong>Velocidad vs. Calidad:</strong> Se prioriza la velocidad para el cirujano. Es normal que la calidad no sea tan perfecta como en un bloque de parafina.</li>
-                    <li><strong>Calidad del Congelado:</strong> Un buen corte es la base. Si el tejido está mal congelado (cristales de hielo), la tinción será pobre.</li>
-                    <li><strong>Espesor del Corte:</strong> Los cortes son más gruesos (5-10 µm), lo que puede dar una apariencia menos nítida.</li>
-                    <li><strong>Control de Reactivos:</strong> Verificar siempre los reactivos. Una hematoxilina vieja dará un resultado pálido.</li>
-                </ul>
-            </div>
-        </details>
-
-        <details>
-            <summary>Alternativas para el "Azuleo" (Blueing) en una situación de urgencia</summary>
-            <div class="details-content">
-                <p>El propósito del "azuleo" es elevar el pH del tejido para que la hematoxilina (que es rojiza/marrón en medio ácido) se transforme en su color azul púrpura característico, lo que proporciona un máximo contraste nuclear.</p>
-                <p>Si no tiene agua amoniacal ni carbonato de litio, aquí están sus opciones, ordenadas por eficacia:</p>
-                
-                <h4>Opción 1: Sustitutos Directos (Los más recomendables)</h4>
-                <h5>Agua del grifo ligeramente alcalina (La alternativa más común):</h5>
-                <ul>
-                    <li><strong>Procedimiento:</strong> Deje correr el agua del grifo sobre el portaobjetos por 30-60 segundos.</li>
-                    <li><strong>Fundamento:</strong> El agua de la red de suministro suele tener un pH ligeramente básico (7.5 - 8.5) debido a los tratamientos de potabilización. Este pH es suficiente para lograr un "azuleo" aceptable, aunque será más lento.</li>
-                    <li><strong>Consejo:</strong> Si el agua de su zona es muy blanda o ácida, esta opción no funcionará bien.</li>
-                </ul>
-
-                <h5>Solución de Bicarbonato de Sodio:</h5>
-                <ul>
-                    <li><strong>Preparación:</strong> Añada una pizca (aproximadamente 0.5 gramos) de bicarbonato de sodio (de cocina) a 250-500 ml de agua destilada o del grifo. Agite suavemente.</li>
-                    <li><strong>Procedimiento:</strong> Sumerja el portaobjetos en esta solución o haga un lavado directo durante 20-30 segundos.</li>
-                    <li><strong>Fundamento:</strong> El bicarbonato de sodio (NaHCO₃) crea una solución ligeramente alcalina (pH ~8.3), perfecta para el azuleo.</li>
-                    <li><strong>Precaución:</strong> No hacer la solución demasiado concentrada, ya que puede dañar el tejido o precipitar.</li>
-                </ul>
-
-                <h4>Opción 2: Modificación del Protocolo (Eliminando el paso de "Azuleo")</h4>
-                <p>Si no tiene nada para alcalinizar, puede modificar la secuencia. La calidad no será óptima, pero el diagnóstico suele ser posible.</p>
-                <h5>Protocolo Modificado Rápido (Sin Azuleo):</h5>
-                <ol>
-                    <li><strong>Fijación:</strong> Alcohol Isopropílico 95-100% - 30 segundos.</li>
-                    <li><strong>Lavado en Agua:</strong> Enjuague RÁPIDO (2-3 segundos) para quitar el exceso de alcohol.</li>
-                    <li><strong>Hematoxilina:</strong> Tiempo reducido a 10-15 segundos. Con menos tiempo, el núcleo se tiñe pero no se sobrecarga tanto de colorante ácido, por lo que el cambio de color es menos crítico.</li>
-                    <li><strong>"Lavado Azulador" Prolongado:</strong> Enjuague con agua corriente el mayor tiempo que pueda permitirse (45-60 segundos). Este lavado prolongado ayuda a eliminar el exceso de hematoxilina y, con el pH del agua, proporciona un azuleo muy tenue pero a menudo suficiente.</li>
-                    <li><strong>Eosina:</strong> 5-10 segundos. Como los núcleos estarán menos azules y más rojizos, use menos tiempo de eosina para evitar un contraste excesivo de rojo sobre rojo.</li>
-                    <li>Continúe con la deshidratación y el montaje como es habitual.</li>
-                </ol>
-                <p><strong>Resultado Esperado:</strong> Los núcleos se verán de un color azul grisáceo o púrpura apagado. El contraste será menor, pero un patólogo experimentado podrá distinguir las estructuras celulares.</p>
-
-                <h4>Opción 3: Soluciones de Emergencia (Menos Ideales, pero Funcionales)</h4>
-                <ul>
-                    <li><strong>Jabón Diluido:</strong> Una gota de jabón líquido neutro para manos en un vaso de agua. El pH será básico. Enjuague muy bien después para evitar manchas.</li>
-                    <li><strong>Saliva (Último recurso):</strong> La saliva tiene un pH ligeramente alcalino. Es una opción teórica y antihigiénica, no recomendable en un laboratorio.</li>
-                </ul>
-
-                <h4>Conclusión y Recomendación Profesional</h4>
-                <p>Mi recomendación prioritaria es la <strong>Opción 1B: Solución de Bicarbonato de Sodio</strong>. Es fácil, barata y efectiva. Si no es posible, la <strong>Opción 2 (Modificación del Protocolo)</strong> es una alternativa viable. Recuerde: en la tinción por congelación, la fijación rápida y correcta con alcohol es aún más crítica que el azuleo para preservar la morfología celular.</p>
-            </div>
-        </details>
-
-        <details>
-            <summary>Método Alternativo Ultra-Rápido (Tinción Monocromática)</summary>
-            <div class="details-content">
-                <p>Para una evaluación muy rápida (ej. confirmar presencia de tejido), se puede usar:</p>
-                <ul>
-                    <li><strong>Azul de Toluidina:</strong> Una inmersión y lavado rápido tiñe núcleos y cartílago.</li>
-                    <li><strong>Rojo Sudan o Oil Red O:</strong> Específicos para teñir lípidos (grasa) en rojo/anaranjado.</li>
-                </ul>
-            </div>
-        </details>
-
-        <details>
-            <summary>Alternativas al Xileno (Sustitutos de Aclarado)</summary>
-            <div class="details-content">
-                <p>Estos productos se conocen como "sustitutos seguros del xileno" o "aclarantes no tóxicos". Son menos volátiles y menos peligrosos para la salud.</p>
-
-                <h4>Opción 1: Sustitutos Comerciales Directos (Los más recomendables)</h4>
-                <p>Son los que debe intentar conseguir a medio plazo. Suelen estar basados en disolventes de aceites vegetales (limoneno) o hidrocarburos alifáticos.</p>
-                <ul>
-                    <li><strong>Ejemplos:</strong> Histo-Clear®, SafeClear®, CitriSolv®, Sub-X®.</li>
-                    <li><strong>Procedimiento:</strong> Se usan exactamente igual que el xileno. Dos baños de 1-2 minutos cada uno.</li>
-                    <li><strong>Ventaja:</strong> Son mucho menos tóxicos que el xileno y no emiten vapores peligrosos.</li>
-                    <li><strong>Desventaja:</strong> Pueden ser más costosos y, en algunos casos, dejar un olor cítrico residual.</li>
-                </ul>
-
-                <h4>Opción 2: Tolueno o Benceno (Alternativas Químicas Clásicas)</h4>
-                <ul>
-                    <li><strong>Procedimiento:</strong> Idéntico al del xileno.</li>
-                    <li><strong>Advertencia CRUCIAL: NO SE RECOMIENDAN.</strong> El benceno es carcinógeno reconocido. El tolueno es menos tóxico que el xileno pero aún así es un peligro para la salud por inhalación y absorción cutánea. Solo deben usarse en campanas de extracción de gases.</li>
-                </ul>
-
-                <h4>Opción 3: Modificación del Protocolo (Para Emergencias sin ningún Aclarante)</h4>
-                <p>Si no tiene acceso a NINGÚN aclarante, puede intentar esta modificación. La calidad se verá afectada, pero la lámina puede ser diagnosticable.</p>
-                <h5>Protocolo de Emergencia: "Montaje Húmedo" o "Montaje Directo desde Alcohol"</h5>
-                <p>Este método evita por completo la necesidad de un aclarante.</p>
-                <ol>
-                    <li>Siga los pasos normales hasta la Eosina y el primer baño de Alcohol 95%.</li>
-                    <li><strong>Deshidratación AGRESIVA:</strong> Pase la lámina por TRES baños sucesivos de Alcohol Isopropílico o Etanol al 100% (absoluto) durante 1 minuto cada uno. Es crítico eliminar TODA traza de agua.</li>
-                    <li><strong>Montaje con Medio Soluble en Alcohol (Paso Clave):</strong> El medio de montaje estándar (DPX, Entellan) no es miscible con alcohol. Necesita un medio de montaje específico soluble en alcohol, como la <strong>Glicerina gelatina</strong>. Saque la lámina del último baño de alcohol, escurra el exceso, coloque una gota generosa de glicerina gelatina y cubra.</li>
-                </ol>
-
-                <h4>Resumen de Recomendaciones en Orden de Prioridad</h4>
-                <ul>
-                    <li><strong>Mejor Opción (Seguridad y Calidad):</strong> Adquirir un sustituto comercial del xileno (ej: Histo-Clear, SafeClear).</li>
-                    <li><strong>Opción para Emergencia (Calidad Aceptable):</strong> Usar Tolueno con extrema precaución y en una campana de extracción.</li>
-                    <li><strong>Opción para Emergencia Extrema (Diagnóstico de Salvamento):</strong> Usar el protocolo modificado con deshidratación agresiva en alcohol 100% y montaje con glicerina gelatina.</li>
-                </ul>
-
-                <h4>Consecuencias de no usar un aclarante o sustituto adecuado:</h4>
-                <ul>
-                    <li><strong>Lámina Turbia o Lechosa:</strong> Debido a la incompatibilidad entre el alcohol y el medio de montaje.</li>
-                    <li><strong>Mala Resolución Microscópica:</strong> La turbidez impide ver los detalles celulares finos.</li>
-                    <li><strong>Tinción No Permanente:</strong> La lámina se secará o se estropeará rápidamente.</li>
-                </ul>
-                <p><strong>En conclusión:</strong> Para un trabajo de rutina y de calidad, los sustitutos comerciales del xileno son la mejor opción. En una emergencia absoluta, el protocolo de montaje con glicerina gelatina desde alcohol puede salvar la situación.</p>
-            </div>
-        </details>
-
-        <details>
-            <summary>Protocolo de Tinción H&E Rápida para Congelación: Método Seguro y Eficaz sin Xileno ni Soluciones Alcalinas Agresivas</summary>
-            <div class="details-content">
-                <h4>Filosofía del Método:</h4>
-                <p>Sustituimos los pasos críticos con alternativas químicas más seguras y controladas. En lugar de "azulear" con bases fuertes, usaremos un buffer alcalino suave. Y reemplazaremos el xileno con un aclarante no tóxico basado en aceites esenciales.</p>
-
-                <h4>Materiales y Reactivos Modificados:</h4>
-                <ul>
-                    <li><strong>Fijador:</strong> Alcohol Isopropílico al 100%.</li>
-                    <li><strong>Hematoxilina de Harris Modificada:</strong> Pre-oxidada y lista para usar.</li>
-                    <li><strong>Solución de "Azuleo" Sustituta:</strong> Agua de Grifo Ligeramente Alcalinizada (pH ~8.0-8.5) con Tampón Fosfato o Bicarbonato de Sodio.</li>
-                    <li><strong>Aclarante Sustituto del Xileno:</strong> Aceite de Limón Histológico (citrus) o de Lavanda.</li>
-                    <li><strong>Medio de Montaje:</strong> Bálsamo de Canadá.</li>
-                </ul>
-
-                <h4>Procedimiento Detallado Paso a Paso (Tiempo Total: 60-75 segundos)</h4>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Paso</th>
-                            <th>Procedimiento</th>
-                            <th>Tiempo</th>
-                            <th>Fundamento Químico y Observaciones Críticas</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>1. Fijación</td><td>Alcohol Isopropílico 100%.</td><td><span class="timer">30 s</span></td><td>Desnaturalización rápida de proteínas, previene artefactos de hielo.</td></tr>
-                        <tr><td>2. Tinción Nuclear</td><td>Hematoxilina de Harris.</td><td><span class="timer">20-30 s</span></td><td>El colorante catiónico se une a los grupos fosfato del ADN.</td></tr>
-                        <tr><td>3. Lavado</td><td>Enjuagar con agua corriente SUAVE.</td><td><span class="timer">15 s</span></td><td>Elimina el exceso de colorante y sales de aluminio.</td></tr>
-                        <tr><td>4. "Azuleo" Suave</td><td>Sumergir en Agua Alcalinizada (pH ~8.0).</td><td><span class="timer">10-15 s</span></td><td><strong>Paso clave:</strong> El pH alcalino suave cambia la hemateína a un azul púrpura intenso y estable de forma controlada.</td></tr>
-                        <tr><td>5. Lavado</td><td>Enjuagar con agua.</td><td><span class="timer">5 s</span></td><td>Detiene la reacción alcalina.</td></tr>
-                        <tr><td>6. Diferenciación</td><td>Sumergir en Alcohol Ácido (0.5% HCl en Alcohol 70%).</td><td><span class="timer">1-2 s</span></td><td><strong>Opcional y crítico:</strong> Si la tinción es muy oscura, este "picado" ácido remueve el exceso de colorante del citoplasma. Lavar inmediatamente.</td></tr>
-                        <tr><td>7. Tinción Citoplasmática</td><td>Eosina Alcohólica.</td><td><span class="timer">10-15 s</span></td><td>Tiñe proteínas y estructuras básicas. La forma alcohólica es más rápida.</td></tr>
-                        <tr><td>8. Deshidratación</td><td>Alcohol 95% (1er baño), luego Alcohol 100% (2do baño).</td><td><span class="timer">10s / 15s</span></td><td>Deshidratación final. Asegurarse de que el alcohol absoluto esté libre de agua.</td></tr>
-                        <tr><td>9. Aclarado</td><td>Aceite de Limón Histológico (2 baños).</td><td><span class="timer">20-30 s c/u</span></td><td>El d-limoneno es miscible con alcohol y bálsamo, no es tóxico y es biodegradable. El tiempo es mayor que con xileno.</td></tr>
-                        <tr><td>10. Montaje</td><td>Bálsamo de Canadá.</td><td>-</td><td>Resina natural con excelente índice de refracción, compatible con el aceite de limón.</td></tr>
-                    </tbody>
-                </table>
-
-                <h4>Ventajas de Este Método Propuesto:</h4>
-                <ul>
-                    <li><strong>Seguridad:</strong> Elimina el xileno (neurotóxico) y el amoníaco (irritante).</li>
-                    <li><strong>Calidad:</strong> Tinción nuclear nítida y precisa gracias al control del pH. Montaje duradero.</li>
-                    <li><strong>Compatibilidad Total:</strong> El aceite de limón y el Bálsamo de Canadá son perfectamente compatibles.</li>
-                    <li><strong>Sostenibilidad:</strong> Reactivos biodegradables y de bajo impacto ambiental.</li>
-                </ul>
-
-                <h4>Consejo Final de Experto:</h4>
-                <p>La clave para dominar este protocolo es la práctica en el paso de "azuleo" suave y la diferenciación ácida. Comience con tiempos conservadores y ajústelos según su hematoxilina. Una vez dominado, obtendrá laminillas de calidad diagnóstica excepcional de manera segura y eficiente.</p>
-            </div>
-        </details>
-
-        <hr>
-        <p><strong>En resumen:</strong> El método estándar de oro para la coloración de cortes por congelación es la <strong>H&E Rápida</strong>, utilizando alcohol como fijador y optimizando todos los tiempos para obtener un diagnóstico fiable en menos de un minuto después de obtener el corte.</p>
-    </main>
-
+    <script src="scripts.js"></script>
 </body>
 </html>

@@ -4,340 +4,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario para Reporte de Anatomía Patológica</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-        
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        header h1 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-        
-        header p {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-        
-        .form-container {
-            padding: 20px;
-        }
-        
-        .form-section {
-            margin-bottom: 30px;
-            padding: 15px;
-            border: 1px solid #e1e8ed;
-            border-radius: 8px;
-            background-color: #f9fbfd;
-        }
-        
-        .section-title {
-            font-size: 1.3rem;
-            color: #2c3e50;
-            margin-bottom: 15px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #3498db;
-        }
-        
-        .form-group {
-            margin-bottom: 15px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-        
-        input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-        
-        textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-        
-        .btn-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-        
-        button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        button:hover {
-            background-color: #2980b9;
-        }
-        
-        .result-container {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #f9fbfd;
-            border-radius: 8px;
-            border: 1px solid #e1e8ed;
-            display: none;
-        }
-        
-        .result-title {
-            font-size: 1.3rem;
-            color: #2c3e50;
-            margin-bottom: 15px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #3498db;
-        }
-        
-        #promptText {
-            width: 100%;
-            min-height: 300px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            background-color: #f8f9fa;
-            font-family: monospace;
-            white-space: pre-wrap;
-            overflow-y: auto;
-        }
-        
-        .copy-btn {
-            margin-top: 10px;
-            background-color: #2ecc71;
-        }
-        
-        .copy-btn:hover {
-            background-color: #27ae60;
-        }
-        
-        .instructions {
-            background-color: #fff8e1;
-            border-left: 4px solid #ffc107;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-        
-        .instructions h3 {
-            color: #ff9800;
-            margin-bottom: 10px;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                border-radius: 0;
-            }
-            
-            body {
-                padding: 10px;
-            }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Formulario para Reporte de Anatomía Patológica</h1>
-            <p>Complete los siguientes campos para generar un prompt para análisis patológico</p>
-        </header>
-        
-        <div class="form-container">
-            <div class="instructions">
-                <h3>Instrucciones:</h3>
-                <p>Complete todos los campos con la información disponible. Si algún dato no está disponible, puede dejarlo en blanco o escribir "No disponible". Al enviar el formulario, se generará automáticamente un prompt para usar en DeepSeek.</p>
+    <aside class="sidebar" id="main-sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-brand">
+                <span class="sidebar-brand-icon">AP</span>
+                <span class="sidebar-brand-text">Protocolos AP</span>
+            </a>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html" title="Inicio"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span><span class="sidebar-text">Inicio</span></a></li>
+                <li><a href="Improntas.html" title="Tinción para Improntas"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 2c1.11 0 2 .89 2 2s-.89 2-2 2-2-.89-2-2 .89-2 2-2z"/></svg></span><span class="sidebar-text">Tinción para Improntas</span></a></li>
+                <li><a href="Papanicolaou.html" title="Papanicolaou Modificado"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5zM5.12 5l.81-1h12l.94 1H5.12z"/></svg></span><span class="sidebar-text">Papanicolaou Modificado</span></a></li>
+                <li><a href="papanicolauclasico.html" title="Papanicolaou Clásico"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5zM5.12 5l.81-1h12l.94 1H5.12z"/></svg></span><span class="sidebar-text">Papanicolaou Clásico</span></a></li>
+                <li><a href="he-congelacion.html" title="H&E para Congelación"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg></span><span class="sidebar-text">H&E para Congelación</span></a></li>
+                <li><a href="he-congelacion-seguro.html" title="H&E Segura (sin Xileno)"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg></span><span class="sidebar-text">H&E Segura (sin Xileno)</span></a></li>
+                <li><a href="improntas-sin-xilol.html" title="Improntas sin Xilol"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 2c1.11 0 2 .89 2 2s-.89 2-2 2-2-.89-2-2 .89-2 2-2z"/></svg></span><span class="sidebar-text">Improntas sin Xilol</span></a></li>
+                <li><a href="papanicolau-sin-xilol.html" title="Papanicolaou sin Xilol"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5zM5.12 5l.81-1h12l.94 1H5.12z"/></svg></span><span class="sidebar-text">Papanicolaou sin Xilol</span></a></li>
+                <li><a href="formato-reporte-caso.html" title="Formato Reporte de Caso"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></span><span class="sidebar-text">Formato Reporte de Caso</span></a></li>
+                <li><a href="formularioreporteap.html" class="active" title="Generador de Prompts"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM8 11H6V9h2v2zm4 0h-2V9h2v2zm4 0h-2V9h2v2z"/></svg></span><span class="sidebar-text">Generador de Prompts</span></a></li>
+                <li><button id="prompt-diagnostico-btn" title="Generar Plantilla"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg></span><span class="sidebar-text">Generar Plantilla</span></button></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <button class="sidebar-toggle" aria-label="Alternar menú" aria-controls="main-sidebar" aria-expanded="false">
+        <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+
+    <div class="main-content">
+        <main class="page-container">
+            <header class="form-header">
+                <h1>Formulario para Reporte de Anatomía Patológica</h1>
+                <p>Complete los siguientes campos para generar un prompt para análisis patológico</p>
+            </header>
+            
+            <div class="form-container">
+                <div class="instructions">
+                    <h4>Instrucciones:</h4>
+                    <p>Complete todos los campos con la información disponible. Si algún dato no está disponible, puede dejarlo en blanco o escribir "No disponible". Al enviar el formulario, se generará automáticamente un prompt para usar en DeepSeek.</p>
+                </div>
+                
+                <form id="pathologyForm">
+                    <div class="form-section">
+                        <h2 class="section-title">DATOS DEL PACIENTE</h2>
+                        
+                        <div class="form-group">
+                            <label for="edad">Edad:</label>
+                            <input type="number" id="edad" name="edad" placeholder="Ej: 45">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sexo">Sexo:</label>
+                            <select id="sexo" name="sexo">
+                                <option value="">Seleccione una opción</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tiempoEvolucion">Tiempo de evolución:</label>
+                            <input type="text" id="tiempoEvolucion" name="tiempoEvolucion" placeholder="Ej: 6 meses">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="localizacion">Localización:</label>
+                            <input type="text" id="localizacion" name="localizacion" placeholder="Ej: región dorsal">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="hallazgosClinicos">Hallazgos clínicos:</label>
+                            <textarea id="hallazgosClinicos" name="hallazgosClinicos" placeholder="Describa los hallazgos clínicos relevantes"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h2 class="section-title">HALLAZGOS PATOLÓGICOS</h2>
+                        
+                        <div class="form-group">
+                            <label for="descripcionMicroscopica">Descripción microscópica:</label>
+                            <textarea id="descripcionMicroscopica" name="descripcionMicroscopica" placeholder="Describa los hallazgos microscópicos"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inmunohistoquimica">Inmunohistoquímica:</label>
+                            <textarea id="inmunohistoquimica" name="inmunohistoquimica" placeholder="Describa los resultados de inmunohistoquímica"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="otrosEstudios">Otros estudios:</label>
+                            <textarea id="otrosEstudios" name="otrosEstudios" placeholder="Describa otros estudios realizados"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="antecedentesRelevantes">Antecedentes relevantes:</label>
+                            <textarea id="antecedentesRelevantes" name="antecedentesRelevantes" placeholder="Describa antecedentes médicos relevantes"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="btn-container">
+                        <button type="submit" class="btn btn-primary">Generar Prompt para DeepSeek</button>
+                    </div>
+                </form>
+                
+                <div class="result-container" id="resultContainer">
+                    <h3 class="result-title">Prompt Generado</h3>
+                    <p>Copie el siguiente texto y péguelo en <a href="https://chat.deepseek.com/" target="_blank">https://chat.deepseek.com/</a></p>
+                    <textarea id="promptText" readonly></textarea>
+                    <div class="btn-container">
+                        <button class="copy-btn" id="copyBtn">Copiar al Portapapeles</button>
+                    </div>
+                </div>
             </div>
-            
-            <form id="pathologyForm">
-                <div class="form-section">
-                    <h2 class="section-title">DATOS DEL PACIENTE</h2>
-                    
-                    <div class="form-group">
-                        <label for="edad">Edad:</label>
-                        <input type="number" id="edad" name="edad" placeholder="Ej: 45">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="sexo">Sexo:</label>
-                        <select id="sexo" name="sexo">
-                            <option value="">Seleccione una opción</option>
-                            <option value="Masculino">Masculino</option>
-                            <option value="Femenino">Femenino</option>
-                            <option value="Otro">Otro</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="tiempoEvolucion">Tiempo de evolución:</label>
-                        <input type="text" id="tiempoEvolucion" name="tiempoEvolucion" placeholder="Ej: 6 meses">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="localizacion">Localización:</label>
-                        <input type="text" id="localizacion" name="localizacion" placeholder="Ej: región dorsal">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="hallazgosClinicos">Hallazgos clínicos:</label>
-                        <textarea id="hallazgosClinicos" name="hallazgosClinicos" placeholder="Describa los hallazgos clínicos relevantes"></textarea>
-                    </div>
-                </div>
-                
-                <div class="form-section">
-                    <h2 class="section-title">HALLAZGOS PATOLÓGICOS</h2>
-                    
-                    <div class="form-group">
-                        <label for="descripcionMicroscopica">Descripción microscópica:</label>
-                        <textarea id="descripcionMicroscopica" name="descripcionMicroscopica" placeholder="Describa los hallazgos microscópicos"></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="inmunohistoquimica">Inmunohistoquímica:</label>
-                        <textarea id="inmunohistoquimica" name="inmunohistoquimica" placeholder="Describa los resultados de inmunohistoquímica"></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="otrosEstudios">Otros estudios:</label>
-                        <textarea id="otrosEstudios" name="otrosEstudios" placeholder="Describa otros estudios realizados"></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="antecedentesRelevantes">Antecedentes relevantes:</label>
-                        <textarea id="antecedentesRelevantes" name="antecedentesRelevantes" placeholder="Describa antecedentes médicos relevantes"></textarea>
-                    </div>
-                </div>
-                
-                <div class="btn-container">
-                    <button type="submit">Generar Prompt para DeepSeek</button>
-                </div>
-            </form>
-            
-            <div class="result-container" id="resultContainer">
-                <h2 class="result-title">Prompt Generado</h2>
-                <p>Copie el siguiente texto y péguelo en <a href="https://chat.deepseek.com/" target="_blank">https://chat.deepseek.com/</a></p>
-                <textarea id="promptText" readonly></textarea>
-                <div class="btn-container">
-                    <button class="copy-btn" id="copyBtn">Copiar al Portapapeles</button>
+        </main>
+    </div>
+
+    <!-- Modal para Prompt Diagnóstico -->
+    <div id="modal-prompt" class="modal">
+        <div class="modal-content">
+            <h2>Colocar Diagnóstico</h2>
+            <label for="input-diagnostico">Introduce el diagnóstico:</label>
+            <input type="text" id="input-diagnostico" placeholder="Ej: adenocarcinoma de pulmón">
+            <div class="modal-buttons">
+                <button id="cancelar-btn" class="btn btn-secondary">Cancelar</button>
+                <button id="generar-btn" class="btn btn-primary">Generar</button>
+            </div>
+            <div class="result-container" id="result-container">
+                <p class="copy-message" id="copy-message">¡Texto copiado al portapapeles!</p>
+                <div class="result-text" id="result-text"></div>
+                <div class="modal-buttons">
+                    <button id="copiar-btn" class="btn btn-primary">Copiar y Abrir DeepSeek</button>
+                    <button id="cerrar-btn" class="btn btn-secondary">Cerrar</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
-        document.getElementById('pathologyForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Obtener valores del formulario
-            const edad = document.getElementById('edad').value || 'No disponible';
-            const sexo = document.getElementById('sexo').value || 'No disponible';
-            const tiempoEvolucion = document.getElementById('tiempoEvolucion').value || 'No disponible';
-            const localizacion = document.getElementById('localizacion').value || 'No disponible';
-            const hallazgosClinicos = document.getElementById('hallazgosClinicos').value || 'No disponible';
-            const descripcionMicroscopica = document.getElementById('descripcionMicroscopica').value || 'No disponible';
-            const inmunohistoquimica = document.getElementById('inmunohistoquimica').value || 'No disponible';
-            const otrosEstudios = document.getElementById('otrosEstudios').value || 'No disponible';
-            const antecedentesRelevantes = document.getElementById('antecedentesRelevantes').value || 'No disponible';
-            
-            // Construir el prompt
-            const promptText = `DATOS DEL PACIENTE:
-
-Edad: ${edad}
-
-Sexo: ${sexo}
-
-Tiempo de evolución: ${tiempoEvolucion}
-
-Localización: ${localizacion}
-
-Hallazgos clínicos: ${hallazgosClinicos}
-
-HALLAZGOS PATOLÓGICOS:
-
-Descripción microscópica: ${descripcionMicroscopica}
-
-Inmunohistoquímica: ${inmunohistoquimica}
-
-Otros estudios: ${otrosEstudios}
-
-Antecedentes relevantes: ${antecedentesRelevantes}
-
-Eres un anatomopatólogo senior del MD Anderson Cancer Center, especializado en dermatopatología. Basándote EXCLUSIVAMENTE en los datos proporcionados, genera un reporte preliminar estructurado que incluya:
-
-Descripción macroscópica en un párrafo y microscópica en un párrafo
-
-Interpretación de hallazgos inmunohistoquímicos (si están disponibles)
-
-Diagnósticos diferenciales priorizados
-
-Estudios complementarios necesarios para confirmar/descartar diagnósticos
-
-Conclusión preliminar y recomendaciones
-
-INSTRUCCIONES ESPECÍFICAS:
-
-Si algún dato marcado como "No disponible" es crítico para el diagnóstico, menciónalo explícitamente en la sección de estudios complementarios.
-
-Estructura el reporte usando los mismos encabezados solicitados.
-
-Mantén un lenguaje técnico apropiado para comunicación entre especialistas.`;
-            
-            // Mostrar el resultado
-            document.getElementById('promptText').value = promptText;
-            document.getElementById('resultContainer').style.display = 'block';
-            
-            // Desplazarse hacia el resultado
-            document.getElementById('resultContainer').scrollIntoView({ behavior: 'smooth' });
-        });
-        
-        // Función para copiar al portapapeles
-        document.getElementById('copyBtn').addEventListener('click', function() {
-            const promptText = document.getElementById('promptText');
-            promptText.select();
-            document.execCommand('copy');
-            
-            // Cambiar temporalmente el texto del botón
-            const originalText = this.textContent;
-            this.textContent = '¡Copiado!';
-            setTimeout(() => {
-                this.textContent = originalText;
-            }, 2000);
-        });
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>

@@ -4,135 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Protocolo Papanicolaou sin Xilol ni Alcohol Acidificado</title>
-    <style>
-        :root {
-            --primary-color: #4a6fa5;
-            --secondary-color: #166088;
-            --accent-color: #4cb5ae;
-            --light-color: #f8f9fa;
-            --dark-color: #343a40;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        h1, h2, h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        h1 { font-size: 2.2rem; }
-        h2 { font-size: 1.8rem; border-bottom: 2px solid var(--secondary-color); padding-bottom: 0.5rem; }
-        h3 { font-size: 1.4rem; color: var(--secondary-color); margin-top: 1.5rem; }
-        ul {
-            padding-left: 20px;
-            margin-bottom: 1rem;
-        }
-        li { margin-bottom: 0.5rem; }
-        strong { color: var(--dark-color); }
-        .main-nav {
-            background-color: var(--dark-color);
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        .main-nav .container-nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-        }
-        .main-nav ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 0;
-            margin: 0;
-        }
-        .main-nav ul li { margin: 5px 15px; }
-        .main-nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .main-nav ul li a:hover, .main-nav ul li a.active {
-            background-color: var(--primary-color);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            font-size: .95rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        th, td { padding: .75rem; border: 1px solid #ccc; text-align: left; }
-        th { background: var(--secondary-color); color: #fff; }
-        tr:nth-child(even) { background: #f2f6fa; }
-        .notes-section {
-            background-color: #fff8e1;
-            border-left: 4px solid #ffc107;
-            padding: 1rem 1.5rem;
-            margin-top: 2rem;
-            border-radius: 4px;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="main-nav">
-        <div class="container-nav">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="Improntas.html">Tinción para Improntas</a></li>
-                <li><a href="Papanicolaou.html">Papanicolaou Modificado</a></li>
-                <li><a href="papanicolauclasico.html">Papanicolaou Clásico</a></li>
-                <li><a href="he-congelacion.html">H&E para Congelación</a></li>
-                <li><a href="improntas-sin-xilol.html">Improntas sin Xilol</a></li>
-                <li><a href="papanicolau-sin-xilol.html" class="active">Papanicolaou sin Xilol</a></li>
-            </ul>
+    <aside class="sidebar" id="main-sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-brand">
+                <span class="sidebar-brand-icon">AP</span>
+                <span class="sidebar-brand-text">Protocolos AP</span>
+            </a>
         </div>
-    </nav>
-
-    <main class="container">
-        <h1>Protocolo detallado para tinción de Papanicolaou sin xilol ni alcohol acidificado</h1>
-        <p>Este protocolo está adaptado para un laboratorio con recursos limitados, usando hematoxilina de Harris, EA36, bálsamo de Canadá y Orange G.</p>
-
-        <table>
-            <thead><tr><th>Paso</th><th>Procedimiento</th><th>Reactivo / Material</th><th>Tiempo aproximado</th></tr></thead>
-            <tbody>
-                <tr><td>1</td><td>Fijación del extendido con alcohol etílico absoluto</td><td>Alcohol etílico absoluto 99-100%</td><td>15 minutos (fijación)</td></tr>
-                <tr><td>2</td><td>Lavado con agua corriente a temperatura ambiente</td><td>Agua corriente</td><td>30 segundos</td></tr>
-                <tr><td>3</td><td>Tinción nuclear con hematoxilina de Harris</td><td>Hematoxilina de Harris</td><td>3 minutos</td></tr>
-                <tr><td>4</td><td>Lavado con agua corriente para eliminar exceso de hematoxilina</td><td>Agua corriente</td><td>1 minuto</td></tr>
-                <tr><td>5</td><td>Tinción citoplasmática con Orange G (Naranja G)</td><td>Orange G (solución alcohólica preparada)</td><td>2-3 minutos</td></tr>
-                <tr><td>6</td><td>Lavado rápido con alcohol absoluto para eliminar exceso de Orange G</td><td>Alcohol absoluto (99-100%)</td><td>30 segundos</td></tr>
-                <tr><td>7</td><td>Tinción con EA36 para citoplasma y otras células</td><td>EA36 (mezcla de eosina y verde luz SF)</td><td>3 minutos</td></tr>
-                <tr><td>8</td><td>Deshidratación con dos baños de alcohol absoluto</td><td>Alcohol absoluto (99-100%)</td><td>2 x 1 minuto</td></tr>
-                <tr><td>9</td><td>Montaje con bálsamo de Canadá (sin uso de xilol)</td><td>Bálsamo de Canadá</td><td>Según secado</td></tr>
-            </tbody>
-        </table>
-
-        <div class="notes-section">
-            <h3>Observaciones:</h3>
+        <nav class="sidebar-nav">
             <ul>
-                <li><strong>Orange G</strong> es un colorante ácido que tiñe queratina y células escamosas maduras en tonos naranjas brillantes.</li>
-                <li>El lavado con <strong>alcohol absoluto</strong> después de Orange G ayuda a fijar la tinción y eliminar excesos sin necesidad de xilol.</li>
-                <li><strong>EA36</strong> completa la tinción polícroma típica del Papanicolaou, con eosina y verde luz SF para diferentes tipos celulares.</li>
-                <li>No se usa xilol ni alcohol acidificado, adaptado para laboratorios con recursos limitados sin comprometer la calidad diagnóstica.</li>
+                <li><a href="index.html" title="Inicio"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span><span class="sidebar-text">Inicio</span></a></li>
+                <li><a href="Improntas.html" title="Tinción para Improntas"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 2c1.11 0 2 .89 2 2s-.89 2-2 2-2-.89-2-2 .89-2 2-2z"/></svg></span><span class="sidebar-text">Tinción para Improntas</span></a></li>
+                <li><a href="Papanicolaou.html" title="Papanicolaou Modificado"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5zM5.12 5l.81-1h12l.94 1H5.12z"/></svg></span><span class="sidebar-text">Papanicolaou Modificado</span></a></li>
+                <li><a href="papanicolauclasico.html" title="Papanicolaou Clásico"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5zM5.12 5l.81-1h12l.94 1H5.12z"/></svg></span><span class="sidebar-text">Papanicolaou Clásico</span></a></li>
+                <li><a href="he-congelacion.html" title="H&E para Congelación"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg></span><span class="sidebar-text">H&E para Congelación</span></a></li>
+                <li><a href="he-congelacion-seguro.html" title="H&E Segura (sin Xileno)"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg></span><span class="sidebar-text">H&E Segura (sin Xileno)</span></a></li>
+                <li><a href="improntas-sin-xilol.html" title="Improntas sin Xilol"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 2c1.11 0 2 .89 2 2s-.89 2-2 2-2-.89-2-2 .89-2 2-2z"/></svg></span><span class="sidebar-text">Improntas sin Xilol</span></a></li>
+                <li><a href="papanicolau-sin-xilol.html" class="active" title="Papanicolaou sin Xilol"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5zM5.12 5l.81-1h12l.94 1H5.12z"/></svg></span><span class="sidebar-text">Papanicolaou sin Xilol</span></a></li>
+                <li><a href="formato-reporte-caso.html" title="Formato Reporte de Caso"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></span><span class="sidebar-text">Formato Reporte de Caso</span></a></li>
+                <li><a href="formularioreporteap.html" title="Generador de Prompts"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM8 11H6V9h2v2zm4 0h-2V9h2v2zm4 0h-2V9h2v2z"/></svg></span><span class="sidebar-text">Generador de Prompts</span></a></li>
+                <li><button id="prompt-diagnostico-btn" title="Generar Plantilla"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg></span><span class="sidebar-text">Generar Plantilla</span></button></li>
             </ul>
+        </nav>
+    </aside>
+
+    <button class="sidebar-toggle" aria-label="Alternar menú" aria-controls="main-sidebar" aria-expanded="false">
+        <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+
+    <div class="main-content">
+        <main class="page-container">
+            <h1>Protocolo detallado para tinción de Papanicolaou sin xilol ni alcohol acidificado</h1>
+            <p>Este protocolo está adaptado para un laboratorio con recursos limitados, usando hematoxilina de Harris, EA36, bálsamo de Canadá y Orange G.</p>
+
+            <table>
+                <thead><tr><th>Paso</th><th>Procedimiento</th><th>Reactivo / Material</th><th>Tiempo aproximado</th></tr></thead>
+                <tbody>
+                    <tr><td>1</td><td>Fijación del extendido con alcohol etílico absoluto</td><td>Alcohol etílico absoluto 99-100%</td><td>15 minutos (fijación)</td></tr>
+                    <tr><td>2</td><td>Lavado con agua corriente a temperatura ambiente</td><td>Agua corriente</td><td>30 segundos</td></tr>
+                    <tr><td>3</td><td>Tinción nuclear con hematoxilina de Harris</td><td>Hematoxilina de Harris</td><td>3 minutos</td></tr>
+                    <tr><td>4</td><td>Lavado con agua corriente para eliminar exceso de hematoxilina</td><td>Agua corriente</td><td>1 minuto</td></tr>
+                    <tr><td>5</td><td>Tinción citoplasmática con Orange G (Naranja G)</td><td>Orange G (solución alcohólica preparada)</td><td>2-3 minutos</td></tr>
+                    <tr><td>6</td><td>Lavado rápido con alcohol absoluto para eliminar exceso de Orange G</td><td>Alcohol absoluto (99-100%)</td><td>30 segundos</td></tr>
+                    <tr><td>7</td><td>Tinción con EA36 para citoplasma y otras células</td><td>EA36 (mezcla de eosina y verde luz SF)</td><td>3 minutos</td></tr>
+                    <tr><td>8</td><td>Deshidratación con dos baños de alcohol absoluto</td><td>Alcohol absoluto (99-100%)</td><td>2 x 1 minuto</td></tr>
+                    <tr><td>9</td><td>Montaje con bálsamo de Canadá (sin uso de xilol)</td><td>Bálsamo de Canadá</td><td>Según secado</td></tr>
+                </tbody>
+            </table>
+
+            <div class="notes-section">
+                <h3>Observaciones:</h3>
+                <ul>
+                    <li><strong>Orange G</strong> es un colorante ácido que tiñe queratina y células escamosas maduras en tonos naranjas brillantes.</li>
+                    <li>El lavado con <strong>alcohol absoluto</strong> después de Orange G ayuda a fijar la tinción y eliminar excesos sin necesidad de xilol.</li>
+                    <li><strong>EA36</strong> completa la tinción polícroma típica del Papanicolaou, con eosina y verde luz SF para diferentes tipos celulares.</li>
+                    <li>No se usa xilol ni alcohol acidificado, adaptado para laboratorios con recursos limitados sin comprometer la calidad diagnóstica.</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal para Prompt Diagnóstico -->
+    <div id="modal-prompt" class="modal">
+        <div class="modal-content">
+            <h2>Colocar Diagnóstico</h2>
+            <label for="input-diagnostico">Introduce el diagnóstico:</label>
+            <input type="text" id="input-diagnostico" placeholder="Ej: adenocarcinoma de pulmón">
+            <div class="modal-buttons">
+                <button id="cancelar-btn" class="btn btn-secondary">Cancelar</button>
+                <button id="generar-btn" class="btn btn-primary">Generar</button>
+            </div>
+            <div class="result-container" id="result-container">
+                <p class="copy-message" id="copy-message">¡Texto copiado al portapapeles!</p>
+                <div class="result-text" id="result-text"></div>
+                <div class="modal-buttons">
+                    <button id="copiar-btn" class="btn btn-primary">Copiar y Abrir DeepSeek</button>
+                    <button id="cerrar-btn" class="btn btn-secondary">Cerrar</button>
+                </div>
+            </div>
         </div>
-    </main>
+    </div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
