@@ -87,6 +87,13 @@ a:hover { color: var(--color-secondary); }
     box-shadow: var(--shadow-depth);
     -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
     scrollbar-width: thin; /* Scrollbar más delgada */
+    cursor: grab; /* Indica que el elemento se puede arrastrar */
+}
+
+.table-container.active-drag {
+    cursor: grabbing; /* Cambia el cursor mientras se arrastra */
+    cursor: -webkit-grabbing;
+    user-select: none; /* Evita la selección de texto mientras se arrastra */
 }
 
 table { /* Renombrado de .tabla-optimizada a table para aplicación global */
@@ -140,6 +147,13 @@ tr:last-child td {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-depth);
     border: 1px solid #ddd;
+}
+
+/* Modificador para contenedores de página de ancho completo */
+.page-container--full-width {
+    max-width: none; /* Anula el max-width de 900px */
+    margin-left: 1rem;  /* Mantiene un pequeño margen lateral */
+    margin-right: 1rem; /* Mantiene un pequeño margen lateral */
 }
 
 .btn {
@@ -519,10 +533,10 @@ details[open] > summary::before {
     .sidebar.is-active {
         width: var(--sidebar-width-expanded);
     }
-    .main-content {
+    .main-content.sidebar-active {
         padding-left: var(--sidebar-width-collapsed);
     }
-    .main-content.sidebar-active {
+    .sidebar.is-active ~ .main-content {
         padding-left: var(--sidebar-width-expanded);
     }
 
@@ -581,9 +595,6 @@ details[open] > summary::before {
 
 /* Estilos para Escritorio */
 @media (min-width: 768px) {
-    body {
-        padding-left: var(--sidebar-width-collapsed);
-    }
     table {
         display: table;
         white-space: normal;
