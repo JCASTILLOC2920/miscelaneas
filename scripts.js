@@ -221,14 +221,16 @@ Sexo: ${data.sexo || 'No disponible'}
 Tiempo de evolución: ${data.tiempoEvolucion || 'No disponible'}
 Localización: ${data.localizacion || 'No disponible'}
 Hallazgos clínicos: ${data.hallazgosClinicos || 'No disponible'}
+Especialidad: ${data.especialidad || 'No disponible'}
 
 HALLAZGOS PATOLÓGICOS:
+Descripción macroscópica: ${data.descripcionMacroscopica || 'No disponible'}
 Descripción microscópica: ${data.descripcionMicroscopica || 'No disponible'}
 Inmunohistoquímica: ${data.inmunohistoquimica || 'No disponible'}
 Otros estudios: ${data.otrosEstudios || 'No disponible'}
 Antecedentes relevantes: ${data.antecedentesRelevantes || 'No disponible'}
 
-Eres un anatomopatólogo senior del MD Anderson Cancer Center, especializado en dermatopatología. Basándote EXCLUSIVAMENTE en los datos proporcionados, genera un reporte preliminar estructurado que incluya:
+Eres un anatomopatólogo senior del MD Anderson Cancer Center, especializado en ${data.especialidad || 'dermatopatología'}. Basándote EXCLUSIVAMENTE en los datos proporcionados, genera un reporte preliminar estructurado que incluya:
 Descripción macroscópica en un párrafo y microscópica en un párrafo
 Interpretación de hallazgos inmunohistoquímicos (si están disponibles)
 Diagnósticos diferenciales priorizados
@@ -244,19 +246,29 @@ Mantén un lenguaje técnico apropiado para comunicación entre especialistas.`;
                 const promptTextEl = document.getElementById('promptText');
                 promptTextEl.value = promptTextContent;
                 resultContainer.style.display = 'block';
+
+                // Copiar al portapapeles y abrir DeepSeek
+                navigator.clipboard.writeText(promptTextContent).then(() => {
+                    window.open('https://chat.deepseek.com/', '_blank');
+                    
+                    // Opcional: mostrar un mensaje de confirmación
+                    const submitButton = pathologyForm.querySelector('button[type="submit"]');
+                    if(submitButton) {
+                        const originalText = submitButton.textContent;
+                        submitButton.textContent = '¡Copiado y Abierto!';
+                        submitButton.disabled = true;
+                        setTimeout(() => {
+                            submitButton.textContent = originalText;
+                            submitButton.disabled = false;
+                        }, 2500);
+                    }
+                }).catch(err => {
+                    console.error('Error al copiar o abrir:', err);
+                    alert('Error al copiar el prompt. Por favor, cópialo manualmente.');
+                });
+                
                 resultContainer.scrollIntoView({ behavior: 'smooth' });
             });
-
-            const copyBtn = document.getElementById('copyBtn');
-            if (copyBtn) {
-                copyBtn.addEventListener('click', function() {
-                    const promptText = document.getElementById('promptText');
-                    navigator.clipboard.writeText(promptText.value).then(() => {
-                        this.textContent = '¡Copiado!';
-                        setTimeout(() => { this.textContent = 'Copiar al Portapapeles'; }, 2000);
-                    });
-                });
-            }
         }
     },
 

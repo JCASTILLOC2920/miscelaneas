@@ -92,6 +92,11 @@
                         <h2 class="section-title">HALLAZGOS PATOLÓGICOS</h2>
                         
                         <div class="form-group">
+                            <label for="descripcionMacroscopica">Descripción macroscópica:</label>
+                            <textarea id="descripcionMacroscopica" name="descripcionMacroscopica" placeholder="Describa los hallazgos macroscópicos"></textarea>
+                        </div>
+
+                        <div class="form-group">
                             <label for="descripcionMicroscopica">Descripción microscópica:</label>
                             <textarea id="descripcionMicroscopica" name="descripcionMicroscopica" placeholder="Describa los hallazgos microscópicos"></textarea>
                         </div>
@@ -110,6 +115,11 @@
                             <label for="antecedentesRelevantes">Antecedentes relevantes:</label>
                             <textarea id="antecedentesRelevantes" name="antecedentesRelevantes" placeholder="Describa antecedentes médicos relevantes"></textarea>
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="especialidad">Especialidad:</label>
+                            <input type="text" id="especialidad" name="especialidad" placeholder="Ej: dermatopatología">
+                        </div>
                     </div>
                     
                     <div class="btn-container">
@@ -119,11 +129,8 @@
                 
                 <div class="result-container" id="resultContainer">
                     <h3 class="result-title">Prompt Generado</h3>
-                    <p>Copie el siguiente texto y péguelo en <a href="https://chat.deepseek.com/" target="_blank">https://chat.deepseek.com/</a></p>
+                    <p>Copiado al portapapeles y abriendo DeepSeek en una nueva pestaña...</p>
                     <textarea id="promptText" readonly></textarea>
-                    <div class="btn-container">
-                        <button class="copy-btn" id="copyBtn">Copiar al Portapapeles</button>
-                    </div>
                 </div>
             </div>
         </main>
